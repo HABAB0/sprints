@@ -1,0 +1,117 @@
+.feedback {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 80px 200px 40px 50px;
+  gap: 6em;
+  background: #FFFFFF;
+}
+
+.feedback__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.feedback__title {
+  color: #1A1A1A;
+  font-size: 36px;
+  line-height: 112%;
+  font-weight: 500;
+}
+
+.feedback__text {
+  color: #808080;
+  font-size: 18px;
+  line-height: 135%;
+  font-weight: 400;
+}
+
+.feedback__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.feedback__input {
+  padding: 15px;
+  border-radius: 16px;
+  outline: none;
+  border: none;
+  background: #F2F2F2;
+  color: #808080;
+  font-family: "Visuelt Pro", sans-serif;
+  font-size: 18px;
+  line-height: 135%;
+  font-weight: 400;
+}
+
+.feedback__actions {
+  display: flex;
+  align-items: center;
+  padding-top: 1em;
+  gap: 2em;
+}
+
+.feedback__button {
+  color: #FFFFFF;
+  background: #4754EB;
+}
+
+.feedback__privacy {
+  color: #595959;
+  font-size: 10px;
+  line-height: 135%;
+  font-weight: 400;
+}
+
+.feedback__privacy-link {
+  color: #505DEC;
+  font-size: 10px;
+  line-height: 135%;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .feedback {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 80px 50px;
+  }
+  .feedback__image {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .feedback {
+    padding: 1.5em 1.3em;
+  }
+  .feedback__title {
+    font-size: 18px;
+    line-height: 125%;
+    font-weight: 500;
+  }
+  .feedback__text {
+    font-size: 14px;
+    line-height: 135%;
+    font-weight: 400;
+  }
+  .feedback__input {
+    font-size: 14px;
+    line-height: 135%;
+    font-weight: 400;
+  }
+  .feedback__privacy {
+    font-size: 12px;
+    line-height: 135%;
+    font-weight: 400;
+  }
+  .feedback__privacy-link {
+    font-size: 12px;
+    line-height: 135%;
+    font-weight: 400;
+  }
+  .feedback__actions {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+  }
+}/*# sourceMappingURL=feedback.css.map */

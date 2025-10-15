@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./sccs/main.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <div class="header__burger">
+                <img src="./svg/closed-menu.svg" alt="">
+            </div>
+            <p>Инстаботы</p>
+        </div>
+        <nav class="header__nav">
+            <ul class="header__menu">
+                <li class="header__menu-item">
+                    <a href="#" class="header__menu-link">О компании</a>
+                </li>
+                <li class="header__menu-item">
+                    <a href="#" class="header__menu-link">Тарифы</a>
+                </li>
+                <li class="header__menu-item">
+                    <a href="#" class="header__menu-link">Отзывы</a>
+                </li><li class="header__menu-item">
+                    <a href="#" class="header__menu-link">Q&A</a>
+                </li>
+                <li class="header__menu-item">
+                    <a href="#" class="header__menu-link">Обратная связь</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header__actions">
+            <div class="header__lang-switch">
+                <p class="header__lang-ru">Ru</p>
+                <p>/</p>
+                <p class="header__lang-en">En</p>
+            </div>
+            <button class="header__button main-button">
+                <span class="header__button-text">Вход и регистрация</span>
+                <span class="header__button-image">
+                    <img src="./svg/button-mobile.svg" alt="">
+                </span>
+            </button>
+        </div>
+    </header>
+    <section class="hero-section">
+        <div class="hero-section__text">
+            <h1 class="hero-section__title">Высокий уровеньвовлечения представителей</h1>
+            <form class="hero-section__form">
+                <div class="hero-section__inputs">
+                    <input type="email" name="email" placeholder="Введите свой e-mail" class="hero-section__input" required>
+                    <button type="submit" class="hero-section__button main-button">Отправить</button>
+                </div>
+                <div>
+                    <p class="hero-section__privacy">Нажимая на кнопку вы соглашаетесь на обработку</p>
+                    <a class="hero-section__privacy-link">персональных данных</a>
+                </div>
+            </form>
+            <div class="hero-section__scroll">
+                <img src="./images/Wheeldown.svg" alt="">
+                <p>Листайте дальше</p>
+            </div>
+        </div>
+        <img src="./images/hero-section-picture.svg" alt="">
+    </section>
+    <section class="advantages">
+        <h1 class="advantages__title">Наши преймущества</h1>
+        <div class="advantages__items">
+            <div class="advantages__item">
+                <div class="advantages__header">
+                    <img src="/images/smile/Emoji1.jpg" alt="">
+                    <h3 class="advantages__subtitle">Легко и просто</h3>
+                </div>
+                <p class="advantages__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada gravida nisi sit felis odio. Sociis et pellentesque sed id. Congue arcu turpis est, aliquet porttitor. Congue arcu turpis est, aliquet porttitor.</p>
+            </div>
+            <div class="advantages__item">
+                <div class="advantages__header">
+                    <img src="/images/smile/Emoji2.jpg" alt="">
+                    <h3 class="advantages__subtitle">Быстро и доступно</h3>
+                </div>
+                <p class="advantages__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada gravida nisi sit felis odio. Sociis et pellentesque sed id. Congue arcu turpis est, aliquet porttitor. Congue arcu turpis est, aliquet porttitor.</p>
+            </div>
+            <div class="advantages__item">
+                <div class="advantages__header">
+                    <img src="/images/smile/Emoji3.jpg" alt="">
+                    <h3 class="advantages__subtitle">А главное, качественно</h3>
+                </div>
+                <p class="advantages__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada gravida nisi sit felis odio. Sociis et pellentesque sed id. Congue arcu turpis est, aliquet porttitor. Congue arcu turpis est, aliquet porttitor.</p>
+            </div>
+        </div>
+    </section>
+    <section class="how-works">
+        <div class="how-works__title">Как мы работаем</div>
+        <div class="how-works__container">
+            <img src="./images/how-works-picture.svg" alt="">
+            <div class="how-works__content">
+                <div class="how-works__wrapper">
+                    <div class="how-works__header">
+                        <span>Lorem ipsum</span>
+                        <div class="how-works__line"></div>
+                        <p>Lorem ipsum</p>
+                        <div class="how-works__line"></div>
+                        <p>Lorem ipsum</p>
+                    </div>
+                    <h2 class="how-works__subtitle">Lorem ipsum dolor sit amet, consectetur.</h2>
+                    <p class="how-works__description">Semper sollicitudin ut cursus nunc eu ultricies.</p>
+                    <p class="how-works__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Posuere lorem nulla tincidunt egestas nibh. Non orci, et massa sed vulputate proin. Eu euismod diam, arcu sit vitae nam. Tristique orci, ornare sit vel amet.</p>
+                    <p class="how-works__text">Ut elit dui iaculis malesuada in auctor dui. Sollicitudin varius vitae ut vitae lacus, sem dolor fermentum enim. Orci orci interdum pretium adipiscing augue sit nisl adipiscing.</p>
+                </div>
+                <button class="how-works__button main-button">Забронировать звонок</button>
+            </div>
+        </div>
+    </section>
+    <section class="tarif">
+        <h2 class="tarif__title">Наши тарифы</h2>
+        <div class="tarif__items">
+            <div class="tarif__item">
+                <div class="tarif__header">
+                    <div class="tarif__name">Эконом</div>
+                    <div class="tarif__price">
+                        <p><span class="tarif__price-num">2 990 руб</span>/месяц</p>
+                    </div>
+                </div>
+                <div class="tarif__features">
+                    <div class="tarif__wrapper">
+                        <div class="tarif__img-container">
+                            <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 5L5 9L13 1" stroke="#4754EB" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <p class="tarif__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada gravida nisi sit felis odio.</p>
+                    </div>
+                    <div class="tarif__wrapper">
+                        <div class="tarif__img-container">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 11L11 1" stroke="#EB4763" stroke-width="2" stroke-linecap="round" />
+                                <path d="M11 11L1 1" stroke="#EB4763" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <p class="tarif__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div class="tarif__wrapper">
+                        <div class="tarif__img-container">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 11L11 1" stroke="#EB4763" stroke-width="2" stroke-linecap="round" />
+                                <path d="M11 11L1 1" stroke="#EB4763" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <p class="tarif__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div class="tarif__wrapper">
+                        <div class="tarif__img-container">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 11L11 1" stroke="#EB4763" stroke-width="2" stroke-linecap="round" />
+                                <path d="M11 11L1 1" stroke="#EB4763" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <p class="tarif__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada gravida nisi sit felis odio.</p>
+                    </div>
+                </div>
+                <button class="tarif__button main-button">Узнать подробнее</button>
+            </div>
+            <div class="tarif__item">
+                <div class="tarif__header">
+                    <div class="tarif__name">Стандарт</div>
+                    <div class="tarif__price">
+                        <p><span class="tarif__price-num">4 990 руб</span>/месяц</p>
+                    </div>
+                </div>
+                <div class="tarif__features">
+                    <div class="tarif__wrapper">
+                        <div class="tarif__img-container">
+                            <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 5L5 9L13 1" stroke="#4754EB" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <p class="tarif__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada gravida nisi sit felis odio.</p>
+                    </div>
+                    <div class="tarif__wrapper">
+                        <div class="tarif__img-container">
+                            <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 5L5 9L13 1" stroke="#4754EB" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <p class="tarif__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div class="tarif__wrapper">
+                        <div class="tarif__img-container">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 11L11 1" stroke="#EB4763" stroke-width="2" stroke-linecap="round" />
+                                <path d="M11 11L1 1" stroke="#EB4763" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <p class="tarif__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div class="tarif__wrapper">
+                        <div class="tarif__img-container">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 11L11 1" stroke="#EB4763" stroke-width="2" stroke-linecap="round" />
+                                <path d="M11 11L1 1" stroke="#EB4763" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <p class="tarif__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada gravida nisi sit felis odio.</p>
+                    </div>
+                </div>
+                <button class="tarif__button main-button">Узнать подробнее</button>
+            </div>
+            <div class="tarif__item">
+                <div class="tarif__header">
+                    <div class="tarif__name">Экстра</div>
+                    <div class="tarif__price">
+                        <p><span class="tarif__price-num">8 990 руб</span>/месяц</p>
+                    </div>
+                </div>
+                <div class="tarif__features">
+                    <div class="tarif__wrapper">
+                        <div class="tarif__img-container">
+                            <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 5L5 9L13 1" stroke="#4754EB" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <p class="tarif__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada gravida nisi sit felis odio.</p>
+                    </div>
+                    <div class="tarif__wrapper">
+                        <div class="tarif__img-container">
+                            <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 5L5 9L13 1" stroke="#4754EB" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <p class="tarif__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div class="tarif__wrapper">
+                        <div class="tarif__img-container">
+                            <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 5L5 9L13 1" stroke="#4754EB" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <p class="tarif__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div class="tarif__wrapper">
+                        <div class="tarif__img-container">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 11L11 1" stroke="#EB4763" stroke-width="2" stroke-linecap="round" />
+                                <path d="M11 11L1 1" stroke="#EB4763" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <p class="tarif__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada gravida nisi sit felis odio.</p>
+                    </div>
+                </div>
+                <button class="tarif__button main-button">Узнать подробнее</button>
+            </div>
+            <div class="tarif__item">
+                <div class="tarif__header">
+                    <div class="tarif__name">Премиальный</div>
+                    <div class="tarif__price">
+                        <p><span class="tarif__price-num">12 990 руб</span>/месяц</p>
+                    </div>
+                </div>
+                <div class="tarif__features">
+                    <div class="tarif__wrapper">
+                        <div class="tarif__img-container">
+                            <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 5L5 9L13 1" stroke="#4754EB" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <p class="tarif__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada gravida nisi sit felis odio.</p>
+                    </div>
+                    <div class="tarif__wrapper">
+                        <div class="tarif__img-container">
+                            <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 5L5 9L13 1" stroke="#4754EB" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <p class="tarif__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div class="tarif__wrapper">
+                        <div class="tarif__img-container">
+                            <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 5L5 9L13 1" stroke="#4754EB" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <p class="tarif__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div class="tarif__wrapper">
+                        <div class="tarif__img-container">
+                            <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 5L5 9L13 1" stroke="#4754EB" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <p class="tarif__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada gravida nisi sit felis odio.</p>
+                    </div>
+                </div>
+                <button class="tarif__button main-button">Узнать подробнее</button>
+            </div>
+        </div>
+    </section>
+    <section class="reviews">
+        <h2 class="reviews__title">Отзывы</h2>
+        <div class="reviews__items">
+            <div class="reviews__item reviews__item-oleg">
+                <div class="reviews__header">
+                    <div class="reviews__profile">
+                        <img src="./images/reviewers/oleg.jpg" alt="Аватар">
+                        <div class="reviews__name">Кот Олежка</div>
+                    </div>
+                    <div class="reviews__date">03.06.2021</div>
+                </div>
+                <p class="reviews__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada gravida nisi sit felis odio. Sociis et pellentesque sed id. Congue arcu turpis est, aliquet porttitor.</p>
+                <div class="reviews__rating">
+                    <img src="./images/stars/Active.svg" alt="">
+                    <img src="./images/stars/Active.svg" alt="">
+                    <img src="./images/stars/Active.svg" alt="">
+                    <img src="./images/stars/Active.svg" alt="">
+                    <img src="./images/stars/Active.svg" alt="">
+                </div>
+            </div>
+            <div class="reviews__item reviews__item-simen">
+                <div class="reviews__header">
+                    <div class="reviews__profile">
+                        <img src="./images/reviewers/semin.jpg" alt="Аватар">
+                        <div class="reviews__name">Кот Семён</div>
+                    </div>
+                    <div class="reviews__date">03.06.2021</div>
+                </div>
+                <p class="reviews__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada gravida nisi sit felis odio. Sociis et pellentesque sed id. Congue arcu turpis est, aliquet porttitor.</p>
+                <div class="reviews__rating">
+                    <img src="./images/stars/Active.svg" alt="">
+                    <img src="./images/stars/Active.svg" alt="">
+                    <img src="./images/stars/Active.svg" alt="">
+                    <img src="./images/stars/Active.svg" alt="">
+                    <img src="./images/stars/Active.svg" alt="">
+                </div>
+            </div>
+            <div class="reviews__item reviews__item-sergay">
+                <div class="reviews__header">
+                    <div class="reviews__profile">
+                        <img src="./images/reviewers/sergay.jpg" alt="Аватар">
+                        <div class="reviews__name">Кот Серёга</div>
+                    </div>
+                    <div class="reviews__date">03.06.2021</div>
+                </div>
+                <p class="reviews__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada gravida nisi sit felis odio. Sociis et pellentesque sed id. Congue arcu turpis est, aliquet porttitor.</p>
+                <div class="reviews__rating">
+                    <img src="./images/stars/Active.svg" alt="">
+                    <img src="./images/stars/Active.svg" alt="">
+                    <img src="./images/stars/Active.svg" alt="">
+                    <img src="./images/stars/Not-Active.svg" alt="">
+                    <img src="./images/stars/Not-Active.svg" alt="">
+                </div>
+            </div>
+            <div class="reviews__item reviews__item-inokenti">
+                <div class="reviews__header">
+                    <div class="reviews__profile">
+                        <img src="./images/reviewers/inokentyi.jpg" alt="Аватар">
+                        <div class="reviews__name">Кот Инокентий</div>
+                    </div>
+                    <div class="reviews__date">03.06.2021</div>
+                </div>
+                <p class="reviews__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada gravida nisi sit felis odio. Sociis et pellentesque sed id. Congue arcu turpis est, aliquet porttitor.</p>
+                <div class="reviews__rating">
+                    <img src="./images/stars/Active.svg" alt="">
+                    <img src="./images/stars/Active.svg" alt="">
+                    <img src="./images/stars/Active.svg" alt="">
+                    <img src="./images/stars/Active.svg" alt="">
+                    <img src="./images/stars/Not-Active.svg" alt="">
+                </div>
+            </div>
+            <div></div>
+            <button class="reviews__button main-button">Структурировать котиков</button>
+        </div> 
+    </section>
+    <section class="sale">
+        <img src="./images/sale.jpg" alt="">
+        <div class="sale__container">
+            <h1 class="sale__title">
+                Получите самую 
+                выгодную цену 
+                на планете
+            </h1>
+            <form class="sale__form">
+                <div class="sale__inputs">
+                    <input type="email" name="email" placeholder="Введите свой e-mail" class="sale__input" required>
+                    <button type="submit" class="sale__button main-button">Отправить</button>
+                </div>
+                <div>
+                    <p class="sale__privacy">Нажимая на кнопку вы соглашаетесь на обработку</p>
+                    <a class="sale__privacy-link">персональных данных</a>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section class="faq">
+        <h2 class="faq__title">Часто задаваемые вопросы</h2>
+        <div class="faq__container">
+            <div class="faq__item">
+                    <button class="faq__header">
+                        <span class="faq__text">
+                            <span class="faq__description">Первый вопрос</span>
+                        </span>
+                        <span class="faq__icon">
+                            <img src="./svg/faq-cross.svg" alt="Открыть">
+                        </span>
+                    </button>
+                    <div class="faq__content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa mi aliquet eu interdum eu pellentesque amet, fermentum hendrerit. Nunc hendrerit nec risus adipiscing lacus, lobortis lectus cursus nunc. Id pellentesque dapibus eu tincidunt dui id tortor, porttitor. Tincidunt nunc praesent euismod in nisl, tellus suspendisse morbi nam. Egestas eget erat malesuada gravida. Et enim integer quam orci, cursus tincidunt mauris, sit.</p>
+                    </div>
+            </div>
+            <div class="faq__item">
+                <button class="faq__header">
+                    <span class="faq__text">
+                        <span class="faq__description">Второй вопрос</span>
+                    </span>
+                    <span class="faq__icon">
+                        <img src="./svg/faq-plus.svg" alt="Открыть">
+                    </span>
+                </button>
+            </div>
+            <div class="faq__item">
+                <button class="faq__header">
+                    <span class="faq__text">
+                        <span class="faq__description">Третий вопрос</span>
+                    </span>
+                    <span class="faq__icon">
+                        <img src="./svg/faq-plus.svg" alt="Открыть">
+                    </span>
+                </button>
+            </div>
+            <div class="faq__item">
+                <button class="faq__header">
+                    <span class="faq__text">
+                        <span class="faq__description">Четвертый вопрос</span>
+                    </span>
+                    <span class="faq__icon">
+                        <img src="./svg/faq-plus.svg" alt="Открыть">
+                    </span>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="feedback">
+        <div class="feedback__container">
+            <h2 class="feedback__title">Обратная связь</h2>
+            <p class="feedback__text">Поговорите с одним из наших сотрудников, чтобы узнать, сколько мы можем получить для вас целевой аудитории за месяц с минимальными усилиями с вашей стороны</p>
+                <form class="feedback__form" >
+                <div class="feedback__inputs">
+                    <input type="text" name="name" placeholder="Введи ваш email" class="feedback__input" required>
+                    <input type="tel" name="phone" placeholder="Номер мобильного телефона" class="feedback__input" required>
+                    <input type="text" name="phone" placeholder="Никнейм в инстаграмм" class="feedback__input" required>
+                    <textarea name="text" placeholder="Что вы бы хотели спросить о росте в Instagram" class="feedback__input"></textarea>
+                </div>
+            </form>
+            <div class="feedback__actions">
+                <button class="feedback__button main-button">Отправить заявку</button>
+                <div>
+                    <p class="feedback__privacy">Нажимая на кнопку вы соглашаетесь на обработку</p>
+                    <a class="feedback__privacy-link">персональных данных</a>
+                </div>
+            </div>
+        </div>
+        <div class="feedback__image">
+            <img src="./images/feedback.jpg" alt="">
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer__text">
+            <h2 class="footer__title">Инстаботы</h2>
+            <p>© 2021 Copyright reserved</p>
+            <p>Instabots</p>
+        </div>
+        <div class="footer__actions">
+            <p>Вернуться наверх</p>
+            <img src="./svg/arrow.svg" alt="">
+        </div>
+    </footer>
+</body>
+</html>

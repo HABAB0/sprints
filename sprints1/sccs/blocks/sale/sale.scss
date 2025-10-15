@@ -1,0 +1,109 @@
+@use "../variables/_variables" as *;
+
+.sale {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px 50px;
+    gap: 1em;
+    background: $color-white;
+}
+
+.sale__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1em;
+}
+
+.sale__title {
+    color: $color-black;
+    font-size: $h1-desktop-font-size;
+    line-height: $h1-desktop-line-height;
+    font-weight: $h1-desktop-font-weight;
+}
+
+.sale__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.sale__inputs {
+    display: flex;
+    padding: 1em;
+    gap: 10em;
+    border-radius: 16px;
+    background: $color-background;
+}
+
+.sale__input {
+    outline: none;
+    border: none;
+    background: none;
+    color: $color-gray;
+    font-size: $body-desktop-font-size;
+    line-height: $body-desktop-line-height;
+    font-weight: $body-desktop-font-weight;
+}
+
+.sale__button {
+    color: $color-blue;
+    background-color: $color-white;
+}
+
+.sale__privacy {
+    color: #595959;
+    font-size: $discription-desktop-font-size;
+    line-height: $discription-desktop-line-height;
+    font-weight: $discription-desktop-font-weight;
+}
+
+.sale__privacy-link {
+    color: $color-hover-blue;
+    font-size: $discription-desktop-font-size;
+    line-height: $discription-desktop-line-height;
+    font-weight: $discription-desktop-font-weight;
+}
+
+
+@media (max-width: 768px){
+    .sale{
+        padding: 10px 50px 80px 50px;;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 375px){
+    .sale{
+        padding: 1.5em 1.3em;
+    }
+    .sale__title {
+        font-size: $h1-mobile-font-size;
+        line-height: $h1-mobile-line-height;
+        font-weight: $h1-mobile-font-weight;
+    }
+
+    .sale__input {
+        font-size: $body-mobile-font-size;
+        line-height: $body-mobile-line-height;
+        font-weight: $body-mobile-font-weight;
+    }
+
+    .sale__inputs {
+        gap: 0;
+        padding: 0.5em;
+    }
+
+    .sale__privacy {
+        font-size: $discription-mobile-font-size;
+        line-height: $discription-mobile-line-height;
+        font-weight: $discription-mobile-font-weight;
+    }
+
+    .sale__privacy-link {
+        font-size: $discription-mobile-font-size;
+        line-height: $discription-mobile-line-height;
+        font-weight: $discription-mobile-font-weight;
+    }
+}

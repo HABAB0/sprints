@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(/img/background.jpg);
+    background-position: center;
+}
+
+.wrapper {
+    max-width: 1440px;
+}
+
+.file-upload {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 24px;
+}
+
+.input {
+    display: flex;
+    padding: 1rem;
+    gap: 1rem;
+    background-color: rgba(63, 62, 62, 0.322);
+    border-radius: 24px;
+}
+
+.actions {
+    display: flex;
+}
+
+.reset-button {
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(63, 62, 62, 0.322);
+    border-radius: 24px;
+    border: none;
+}

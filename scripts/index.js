@@ -1,6 +1,6 @@
+const form = document.getElementById("forms-container");
 document.getElementById("json-file").addEventListener ("change" ,(event) => {
     const file = event.target.files[0]
-    const form = document.getElementById("forms-container");
 
     const reader = new FileReader();
     reader.onload = function(e) {
@@ -95,3 +95,10 @@ document.getElementById("json-file").addEventListener ("change" ,(event) => {
     }
     reader.readAsText(file);
 })
+
+const resetButton = document.getElementById("button--reset");
+if (resetButton && form) {
+    resetButton.addEventListener("click", function() {
+        form.innerHTML = "";
+    });
+}

@@ -81,6 +81,17 @@ document.getElementById("json-file").addEventListener ("change" ,(event) => {
                 }
             })
         }
+
+        if(data.buttons){
+            data.buttons.forEach(element => {
+                if(element.text){
+                    let button = document.createElement("button");
+                    button.textContent = element.text;
+                    form.appendChild(button);
+                }
+            })
+        }
+        
     }
     reader.readAsText(file);
 })

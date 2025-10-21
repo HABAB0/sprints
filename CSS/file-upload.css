@@ -1,0 +1,37 @@
+.file-upload {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 24px;
+}
+
+.file-upload__input {
+    display: flex;
+    padding: 1rem;
+    gap: 10rem;
+    background-color: rgba(63, 62, 62, 0.322);
+    border: none;
+    box-shadow: 0 4px 20px 0 rgba(25, 25, 25, 0.05);
+    border-radius: 24px;
+}
+
+.file-upload__actions {
+    display: flex;
+}
+
+.file-upload__button--reset {
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(63, 62, 62, 0.322);
+    border-radius: 24px;
+    border: none;
+}
+
+.file-upload__forms-contaimer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}

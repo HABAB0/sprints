@@ -23,3 +23,15 @@ body {
     max-width: 1440px;
     width: 100%;
 }
+
+@media (max-width: 800px){
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 400px){
+    html {
+        font-size: 10px;
+    }
+}

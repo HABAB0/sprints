@@ -1,0 +1,37 @@
+@import url(/CSS/file-upload.css);
+@import url(./fonts/fonts.css);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Caveat', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(/img/background.jpg);
+    background-position: center;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1440px;
+    width: 100%;
+}
+
+@media (max-width: 800px){
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 400px){
+    html {
+        font-size: 10px;
+    }
+}

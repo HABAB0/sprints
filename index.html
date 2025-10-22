@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +8,20 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="file-upload">
-            <div class="file-upload__input">
-                <label for="json-file">Выберите JSON-файл:</label>
-                <input type="file" id="json-file" accept="application/json, text/javascript">
+        <div class="file-upload" id="file-upload">
+            <div class="file-upload__inputs" id="json-upload-field">
+                <label for="json-file">
+                    <input type="file" class="file-upload__input" id="json-file" accept="application/json, text/javascript">
+                    <span class="file-upload__button">Выберите файл</span>
+                </label>
             </div>
-            <div id="forms-container" class="file-upload__forms-container"></div>
-            <div class="file-upload__actions">
-                <button class="file-upload__button--reset" id="button--reset" type="reset">Сбросить форму</button>
+            <div class="file-upload-wrapper" id="forms-wrapper">
+                <form id="forms-container" class="file-upload__forms-container"></form>
             </div>
+            <button class="file-upload__button--reset" id="button--reset" type="reset">
+                <div class="file-upload__actions"></div>
+                <span>Удалить форму</span>
+            </button>
         </div>
     </div>
     <script src="/scripts/index.js"></script>

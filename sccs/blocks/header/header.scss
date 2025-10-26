@@ -1,0 +1,107 @@
+@use "../variables/_variables" as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2.5rem;
+  background-color: $color-white;
+  border-radius: 24px 24px 0 0;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header__burger {
+  display: none;
+}
+
+.header__logo--text {
+  text-decoration: none;
+}
+
+.header__logo--text h1 {
+  color: $color-blue;
+  @include text-style(headline-desk);
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header__menu-link {
+  text-decoration: none;
+  color: $color-gray;
+  @include text-style(body-desk);
+}
+
+.header__actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.header__lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  cursor: pointer;
+  color: $color-gray;
+  @include text-style(body-desk);
+}
+
+.header__lang--ru {
+  color: $color-blue;
+  @include text-style(headline-desk);
+}
+
+.header__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-white;
+  background-color: $color-blue;
+}
+
+.header__button-image {
+  display: none;
+}
+
+@media (max-width: 1080px){
+  .header__lang-switch {
+    display: none;
+  }
+}
+
+@media (max-width: 970px){
+  .header__nav {
+    display: none;
+  }
+}
+
+@media (max-width: 768px){
+  .header__burger {
+    display: block;
+  } 
+}
+
+@media (max-width: 500px){
+  .header__button-image {
+    display: block;
+  }
+
+  .header__button-text {
+    display: none;
+  }
+}
+
+@media (max-width: 375px){
+  .header__logo--text h1 {
+  @include text-style(headline-mob);
+  }
+}

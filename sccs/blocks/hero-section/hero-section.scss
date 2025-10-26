@@ -1,0 +1,134 @@
+@use "../variables/_variables" as *;
+
+.hero-section {
+    position: relative;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    padding: 1rem 2.5rem;
+}
+
+.hero-section__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+.hero-section__title {
+    max-width: 650px;
+    color: $color-black;
+    @include text-style(h1-desk);
+}
+
+.hero-section__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hero-section__inputs {
+    display: flex;
+    padding: 1rem;
+    gap: 6rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.hero-section__input {
+    outline: none;
+    border: none;
+    background: none;
+    color: $color-gray;
+    @include text-style(body-desk);
+}
+
+.hero-section__button {
+    color: $color-blue;
+    background-color: $color-white;
+}
+
+.hero-section__privacy {
+    color: #595959;
+    @include text-style(discription-desk);
+}
+
+.hero-section__privacy-link {
+    color: $color-hover-blue;
+    @include text-style(discription-desk);
+}
+
+.hero-section__scroll {
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+    color: $color-white;
+    @include text-style(table-text-desk);
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  max-width: 1392px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/images/svg/background/background-hero-section.svg')no-repeat center;
+  filter: blur(240px);
+  z-index: -1;
+}
+
+@media (max-width: 1000px){
+    .hero-section{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0;
+    }
+}
+
+@media (max-width: 768px){
+    .hero-section__inputs {
+        gap: 0;
+    }
+
+    .hero-section__scroll{
+        display: none;
+    }
+
+    .hero-section::after {
+        max-width: 768px;
+        background: url('/images/svg/mobile768-bg/background-hero-mobile.svg')no-repeat center;
+    }
+}
+
+@media (max-width: 620px){
+    .hero-section__title {
+        @include text-style(h1-mob);
+    }
+}
+
+@media (max-width: 440px){
+    .hero-section__input {
+        @include text-style(body-mob);
+    }
+
+    .hero-section__privacy {
+        @include text-style(discription-mob);
+    }
+
+    .hero-section__privacy-link {
+        @include text-style(discription-mob);
+    }
+
+    .hero-section__scroll {
+        @include text-style(table-text-mob);
+    }
+
+    .hero-section::after {
+        max-width: 375px;
+        background: url('/images/svg/mobile375-bg/background-hero-mobile.svg')no-repeat center;
+    }
+}

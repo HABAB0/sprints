@@ -1,0 +1,57 @@
+@use "./imports.scss";
+@use "./blocks/variables/_variables" as *;
+
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  background-color: $color-background;
+  font-family: 'Visuelt Pro', sans-serif;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0.5em;
+}
+
+.main-button {
+  font-family: 'Visuelt Pro', sans-serif;
+  padding: 1em 1.5em;
+  border-radius: 16px;
+  border: none;
+  @include text-style(span-desk);
+}
+
+@media (max-width: 800px){
+  html {
+  font-size: 12px;
+  }
+}
+
+@media (max-width: 500px){
+  .header__button {
+    border-radius: 75px;
+  }
+  .main-button {
+    @include text-style(span-mob);
+  }
+}
+
+@media (max-width: 400px){
+  html {
+  font-size: 10px;
+  }
+}

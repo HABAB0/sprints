@@ -1,0 +1,43 @@
+@use "../variables/_variables" as *;
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 2.5rem;
+    background: $color-blue;
+    border-radius: 0 0 24px 24px;
+    color: $color-white;
+}
+
+.footer__text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    @include text-style(table-text-desk);
+}
+
+.footer__title {
+    @include text-style(body-desk);
+}
+
+.footer__actions {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    @include text-style(body-desk);
+}
+
+@media (max-width: 500px){
+    .footer__text {
+        @include text-style(table-text-mob);
+    }
+
+    .footer__title {
+        @include text-style(body-mob);
+    }
+
+    .footer__actions {
+        @include text-style(body-mob);
+    }
+}

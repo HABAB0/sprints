@@ -1,0 +1,88 @@
+@use "../variables/_variables" as *;
+
+.sale {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 4rem 2.5rem;
+    gap: 1rem;
+    background: $color-white;
+}
+
+.sale__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.sale__title {
+    max-width: 650px;
+    color: $color-black;
+    @include text-style(h1-desk);
+}
+
+.sale__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sale__inputs {
+    display: flex;
+    padding: 1rem;
+    gap: 10rem;
+    border-radius: 16px;
+    background: $color-background;
+}
+
+.sale__input {
+    outline: none;
+    border: none;
+    background: none;
+    @include text-style(body-desk);
+}
+
+.sale__button {
+    color: $color-blue;
+    background-color: $color-white;
+}
+
+.sale__privacy {
+    color: #595959;
+    @include text-style(discription-desk);
+}
+
+.sale__privacy-link {
+    color: $color-hover-blue;
+    @include text-style(discription-desk);
+}
+
+
+@media (max-width: 1000px){
+    .sale{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 590px){
+    .sale__title {
+        @include text-style(h1-mob);
+    }
+
+    .sale__inputs {
+        gap: 1rem;
+    }
+
+    .sale__input {
+        @include text-style(body-mob);
+    }
+
+    .sale__privacy {
+        @include text-style(discription-mob);
+    }
+
+    .sale__privacy-link {
+        @include text-style(discription-mob);
+    }
+}

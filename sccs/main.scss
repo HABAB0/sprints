@@ -9,6 +9,7 @@
 
 html {
   font-size: 20px;
+  scroll-behavior: smooth;
 }
 
 img {
@@ -33,6 +34,7 @@ body {
   border-radius: 16px;
   border: none;
   @include text-style(span-desk);
+  transition: box-shadow 0.4s ease, color 0.4s ease;
 }
 
 @media (max-width: 800px){

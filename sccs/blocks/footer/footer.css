@@ -42,6 +42,8 @@ panelsOnBg {
   font-size: 18px;
   line-height: 135%;
   font-weight: 400;
+  text-decoration: none;
+  color: #FFFFFF;
 }
 
 @media (max-width: 500px) {

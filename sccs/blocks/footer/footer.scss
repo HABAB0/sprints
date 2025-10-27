@@ -26,6 +26,8 @@
     align-items: flex-start;
     gap: 0.5rem;
     @include text-style(body-desk);
+    text-decoration: none;
+    color: $color-white;
 }
 
 @media (max-width: 500px){

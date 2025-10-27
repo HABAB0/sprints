@@ -47,6 +47,12 @@ panelsOnBg {
   border-radius: 16px;
   background: #F2F2F2;
 }
+.sale__inputs:hover {
+  box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
+}
+.sale__inputs:focus-within {
+  box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
+}
 
 .sale__input {
   outline: none;
@@ -56,10 +62,35 @@ panelsOnBg {
   line-height: 135%;
   font-weight: 400;
 }
+.sale__input:hover::-moz-placeholder {
+  color: #505DEC;
+}
+.sale__input:hover::placeholder {
+  color: #505DEC;
+}
+.sale__input:focus {
+  color: #505DEC;
+}
+.sale__input:focus::-moz-placeholder {
+  color: #505DEC;
+}
+.sale__input:focus::placeholder {
+  color: #505DEC;
+}
 
 .sale__button {
   color: #4754EB;
   background-color: #FFFFFF;
+}
+
+.sale__button:hover {
+  box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
+  color: #505DEC;
+}
+
+.sale__button:active {
+  box-shadow: 0 8px 24px 0 rgba(60, 73, 221, 0.1);
+  color: #3C49DD;
 }
 
 .sale__privacy {

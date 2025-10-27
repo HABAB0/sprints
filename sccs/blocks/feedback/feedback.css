@@ -69,6 +69,16 @@ panelsOnBg {
   background: #4754EB;
 }
 
+.feedback__button:hover {
+  box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
+  background-color: #505DEC;
+}
+
+.feedback__button:active {
+  box-shadow: 0 8px 24px 0 rgba(60, 73, 221, 0.1);
+  background-color: #3C49DD;
+}
+
 .feedback__privacy {
   color: #595959;
   font-size: 10px;

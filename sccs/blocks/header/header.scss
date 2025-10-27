@@ -39,6 +39,11 @@
   text-decoration: none;
   color: $color-gray;
   @include text-style(body-desk);
+  transition: color 0.4s ease;
+  &:hover {
+    color: $color-hover-blue;
+    
+  }
 }
 
 .header__actions {
@@ -66,6 +71,16 @@
   justify-content: center;
   color: $color-white;
   background-color: $color-blue;
+}
+
+.header__button:hover {
+  box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
+  background-color: $color-hover-blue;
+}
+
+.header__button:active {
+  box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
+  background-color: $color-inactive-blue;
 }
 
 .header__button-image {

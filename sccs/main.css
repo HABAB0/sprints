@@ -53,6 +53,10 @@ panelsOnBg, .reviews__item {
   font-size: 18px;
   line-height: 135%;
   font-weight: 400;
+  transition: color 0.4s ease;
+}
+.header__menu-link:hover {
+  color: #505DEC;
 }
 
 .header__actions {
@@ -84,6 +88,16 @@ panelsOnBg, .reviews__item {
   justify-content: center;
   color: #FFFFFF;
   background-color: #4754EB;
+}
+
+.header__button:hover {
+  box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
+  background-color: #505DEC;
+}
+
+.header__button:active {
+  box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
+  background-color: #3C49DD;
 }
 
 .header__button-image {
@@ -157,6 +171,13 @@ panelsOnBg, .reviews__item {
   gap: 6rem;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.5);
+  transition: box-shadow 0.4s ease;
+}
+.hero-section__inputs:hover {
+  box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
+}
+.hero-section__inputs:focus-within {
+  box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
 }
 
 .hero-section__input {
@@ -167,11 +188,37 @@ panelsOnBg, .reviews__item {
   font-size: 18px;
   line-height: 135%;
   font-weight: 400;
+  transition: color 0.4s ease;
+}
+.hero-section__input:hover::-moz-placeholder {
+  color: #505DEC;
+}
+.hero-section__input:hover::placeholder {
+  color: #505DEC;
+}
+.hero-section__input:focus {
+  color: #505DEC;
+}
+.hero-section__input:focus::-moz-placeholder {
+  color: #505DEC;
+}
+.hero-section__input:focus::placeholder {
+  color: #505DEC;
 }
 
 .hero-section__button {
   color: #4754EB;
   background-color: #FFFFFF;
+}
+
+.hero-section__button:hover {
+  box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
+  color: #505DEC;
+}
+
+.hero-section__button:active {
+  box-shadow: 0 8px 24px 0 rgba(60, 73, 221, 0.1);
+  color: #3C49DD;
 }
 
 .hero-section__privacy {
@@ -196,6 +243,13 @@ panelsOnBg, .reviews__item {
   font-size: 16px;
   line-height: 135%;
   font-weight: 400;
+}
+.hero-section__scroll:hover {
+  color: #505DEC;
+}
+
+.hero-section__scroll--image {
+  background-image: url(/images/svg/Wheeldown.svg);
 }
 
 .hero-section::after {
@@ -422,6 +476,16 @@ panelsOnBg, .reviews__item {
   font-weight: 500;
 }
 
+.how-works__button:hover {
+  box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
+  background-color: #505DEC;
+}
+
+.how-works__button:active {
+  box-shadow: 0 8px 24px 0 rgba(60, 73, 221, 0.1);
+  background-color: #3C49DD;
+}
+
 .how-works::after {
   content: "";
   position: absolute;
@@ -582,6 +646,14 @@ panelsOnBg, .reviews__item {
   background: #FFFFFF;
 }
 
+.tarif__button:hover {
+  box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
+}
+
+.tarif__button:active {
+  box-shadow: 0 8px 24px 0 rgba(60, 73, 221, 0.1);
+}
+
 @media (max-width: 1000px) {
   .tarif__items {
     grid-template-columns: repeat(2, 1fr);
@@ -695,6 +767,16 @@ panelsOnBg, .reviews__item {
   background: #FFFFFF;
 }
 
+.reviews__button:hover {
+  box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
+  color: #505DEC;
+}
+
+.reviews__button:active {
+  box-shadow: 0 8px 24px 0 rgba(60, 73, 221, 0.1);
+  color: #3C49DD;
+}
+
 .reviews::after {
   content: "";
   position: absolute;
@@ -785,6 +867,12 @@ panelsOnBg, .reviews__item {
   border-radius: 16px;
   background: #F2F2F2;
 }
+.sale__inputs:hover {
+  box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
+}
+.sale__inputs:focus-within {
+  box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
+}
 
 .sale__input {
   outline: none;
@@ -794,10 +882,35 @@ panelsOnBg, .reviews__item {
   line-height: 135%;
   font-weight: 400;
 }
+.sale__input:hover::-moz-placeholder {
+  color: #505DEC;
+}
+.sale__input:hover::placeholder {
+  color: #505DEC;
+}
+.sale__input:focus {
+  color: #505DEC;
+}
+.sale__input:focus::-moz-placeholder {
+  color: #505DEC;
+}
+.sale__input:focus::placeholder {
+  color: #505DEC;
+}
 
 .sale__button {
   color: #4754EB;
   background-color: #FFFFFF;
+}
+
+.sale__button:hover {
+  box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
+  color: #505DEC;
+}
+
+.sale__button:active {
+  box-shadow: 0 8px 24px 0 rgba(60, 73, 221, 0.1);
+  color: #3C49DD;
 }
 
 .sale__privacy {
@@ -986,6 +1099,25 @@ panelsOnBg, .reviews__item {
   font-size: 18px;
   line-height: 135%;
   font-weight: 400;
+  transition: box-shadow 0.4s ease, color 0.4s ease;
+}
+.feedback__input:hover {
+  box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
+}
+.feedback__input:hover::-moz-placeholder {
+  color: #505DEC;
+}
+.feedback__input:hover::placeholder {
+  color: #505DEC;
+}
+.feedback__input:focus {
+  color: #505DEC;
+}
+.feedback__input:focus::-moz-placeholder {
+  color: #505DEC;
+}
+.feedback__input:focus::placeholder {
+  color: #505DEC;
 }
 
 .feedback__actions {
@@ -998,6 +1130,16 @@ panelsOnBg, .reviews__item {
 .feedback__button {
   color: #FFFFFF;
   background: #4754EB;
+}
+
+.feedback__button:hover {
+  box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
+  background-color: #505DEC;
+}
+
+.feedback__button:active {
+  box-shadow: 0 8px 24px 0 rgba(60, 73, 221, 0.1);
+  background-color: #3C49DD;
 }
 
 .feedback__privacy {
@@ -1089,6 +1231,11 @@ panelsOnBg, .reviews__item {
   font-size: 18px;
   line-height: 135%;
   font-weight: 400;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.footer__actions:hover {
+  color: #808080;
 }
 
 @media (max-width: 500px) {
@@ -1127,6 +1274,7 @@ panelsOnBg, .reviews__item {
 
 html {
   font-size: 20px;
+  scroll-behavior: smooth;
 }
 
 img {
@@ -1153,6 +1301,7 @@ body {
   font-size: 18px;
   line-height: 135%;
   font-weight: 500;
+  transition: box-shadow 0.4s ease, color 0.4s ease;
 }
 
 @media (max-width: 800px) {

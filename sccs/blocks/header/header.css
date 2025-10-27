@@ -53,6 +53,10 @@ panelsOnBg {
   font-size: 18px;
   line-height: 135%;
   font-weight: 400;
+  transition: color 0.4s ease;
+}
+.header__menu-link:hover {
+  color: #505DEC;
 }
 
 .header__actions {
@@ -84,6 +88,16 @@ panelsOnBg {
   justify-content: center;
   color: #FFFFFF;
   background-color: #4754EB;
+}
+
+.header__button:hover {
+  box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
+  background-color: #505DEC;
+}
+
+.header__button:active {
+  box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
+  background-color: #3C49DD;
 }
 
 .header__button-image {

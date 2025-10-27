@@ -47,6 +47,13 @@ panelsOnBg {
   gap: 6rem;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.5);
+  transition: box-shadow 0.4s ease;
+}
+.hero-section__inputs:hover {
+  box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
+}
+.hero-section__inputs:focus-within {
+  box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
 }
 
 .hero-section__input {
@@ -57,11 +64,37 @@ panelsOnBg {
   font-size: 18px;
   line-height: 135%;
   font-weight: 400;
+  transition: color 0.4s ease;
+}
+.hero-section__input:hover::-moz-placeholder {
+  color: #505DEC;
+}
+.hero-section__input:hover::placeholder {
+  color: #505DEC;
+}
+.hero-section__input:focus {
+  color: #505DEC;
+}
+.hero-section__input:focus::-moz-placeholder {
+  color: #505DEC;
+}
+.hero-section__input:focus::placeholder {
+  color: #505DEC;
 }
 
 .hero-section__button {
   color: #4754EB;
   background-color: #FFFFFF;
+}
+
+.hero-section__button:hover {
+  box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
+  color: #505DEC;
+}
+
+.hero-section__button:active {
+  box-shadow: 0 8px 24px 0 rgba(60, 73, 221, 0.1);
+  color: #3C49DD;
 }
 
 .hero-section__privacy {
@@ -86,6 +119,13 @@ panelsOnBg {
   font-size: 16px;
   line-height: 135%;
   font-weight: 400;
+}
+.hero-section__scroll:hover {
+  color: #505DEC;
+}
+
+.hero-section__scroll--image {
+  background-image: url(/images/svg/Wheeldown.svg);
 }
 
 .hero-section::after {

@@ -34,6 +34,13 @@
     gap: 10rem;
     border-radius: 16px;
     background: $color-background;
+
+    &:hover {
+        box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
+    }
+    &:focus-within {
+        box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
+    }
 }
 
 .sale__input {
@@ -41,11 +48,33 @@
     border: none;
     background: none;
     @include text-style(body-desk);
+
+    &:hover::placeholder {
+        color: $color-hover-blue;
+    }
+
+    &:focus{
+        color: $color-hover-blue;
+    }
+
+    &:focus::placeholder {
+        color: $color-hover-blue;
+    }
 }
 
 .sale__button {
     color: $color-blue;
     background-color: $color-white;
+}
+
+.sale__button:hover {
+  box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
+  color: $color-hover-blue;
+}
+
+.sale__button:active {
+  box-shadow: 0 8px 24px 0 rgba(60, 73, 221, 0.1);
+  color: $color-inactive-blue;
 }
 
 .sale__privacy {

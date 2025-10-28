@@ -121,22 +121,21 @@ panelsOnBg {
   line-height: 135%;
   font-weight: 400;
   text-decoration: none;
-  transition: color 0.4s ease;
-}
-.hero-section__scroll:hover {
-  color: #505DEC;
 }
 .hero-section__scroll-image {
-  width: 30px;
-  height: 30px;
-  background: url("/images/svg/Wheeldown.svg") no-repeat center;
+  width: 24px;
+  height: 32px;
+  background: url("../../../images/svg/Wheeldown.svg") no-repeat center;
   background-size: cover;
-}
-.hero-section__scroll-image:hover {
-  background-image: url("/images/svg/Wheeldown-hover.svg");
 }
 .hero-section__scroll-text {
   color: #FFFFFF;
+}
+.hero-section__scroll:hover .hero-section__scroll-text {
+  color: #505DEC;
+}
+.hero-section__scroll:hover .hero-section__scroll-image {
+  background: url("../../../images/svg/Wheeldown-hover.svg") no-repeat center;
 }
 
 .hero-section::after {

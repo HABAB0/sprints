@@ -128,12 +128,19 @@
 }
 
 @media (max-width: 1000px){
+
     .reviews__items{
+        grid-template-areas: initial;
         grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
     }
 
-    .reviews__item-simen, .reviews__item-sergay, .reviews__item-inokenti {
+    .reviews__item-top, .reviews__item-bottom, .reviews__item-left, .reviews__item-right {
+        display: block;
         position: static;
+        transform: none;
+        max-width: none;
+        grid-area: auto;
     }
 
     .reviews__button {

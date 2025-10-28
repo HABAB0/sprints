@@ -24,6 +24,27 @@
     flex-direction: column;
     gap: 5rem;
     align-items: flex-start;
+    overflow: hidden;
+}
+
+.how-works__slider-elements {
+    display: grid;
+    grid-template-columns: repeat(3, 100%);
+    width: 100%;
+    transform: translateX(0%);
+    transition: transform 0.4s ease;
+}   
+
+.how-works__element {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 85%;
+    overflow: hidden;
+}
+
+.how-works__scroll {
+    cursor: pointer;
 }
 
 .how-works__wrapper {

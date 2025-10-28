@@ -99,25 +99,23 @@
     color: $color-white;
     @include text-style(table-text-desk);
     text-decoration: none;
-    transition: color 0.4s ease;
-
-    &:hover {
-        color: $color-hover-blue;
-    }
 
     &-image {
-        width: 30px;
-        height: 30px;
-        background: url("/images/svg/Wheeldown.svg") no-repeat center;
-        background-size: cover;
-
-        &:hover {
-            background-image: url("/images/svg/Wheeldown-hover.svg");
-        }
+        width: 24px;
+        height: 32px;
+        background: url("../../../images/svg/Wheeldown.svg") no-repeat center;
+        background-size: cover; 
     }
-
     &-text {
         color: $color-white;
+    }
+    &:hover {
+        .hero-section__scroll-text {
+            color: $color-hover-blue;
+        }
+        .hero-section__scroll-image {
+            background: url("../../../images/svg/Wheeldown-hover.svg")no-repeat center;
+        }
     }
 }
 

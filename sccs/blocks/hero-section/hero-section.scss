@@ -94,17 +94,31 @@
 .hero-section__scroll {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    justify-content: center;
+    gap: 0.5rem;
     color: $color-white;
     @include text-style(table-text-desk);
+    text-decoration: none;
+    transition: color 0.4s ease;
 
     &:hover {
         color: $color-hover-blue;
     }
-}
 
-.hero-section__scroll--image {
-    background-image: url(/images/svg/Wheeldown.svg);
+    &-image {
+        width: 30px;
+        height: 30px;
+        background: url("/images/svg/Wheeldown.svg") no-repeat center;
+        background-size: cover;
+
+        &:hover {
+            background-image: url("/images/svg/Wheeldown-hover.svg");
+        }
+    }
+
+    &-text {
+        color: $color-white;
+    }
 }
 
 .hero-section::after {

@@ -114,18 +114,29 @@ panelsOnBg {
 .hero-section__scroll {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: center;
+  gap: 0.5rem;
   color: #FFFFFF;
   font-size: 16px;
   line-height: 135%;
   font-weight: 400;
+  text-decoration: none;
+  transition: color 0.4s ease;
 }
 .hero-section__scroll:hover {
   color: #505DEC;
 }
-
-.hero-section__scroll--image {
-  background-image: url(/images/svg/Wheeldown.svg);
+.hero-section__scroll-image {
+  width: 30px;
+  height: 30px;
+  background: url("/images/svg/Wheeldown.svg") no-repeat center;
+  background-size: cover;
+}
+.hero-section__scroll-image:hover {
+  background-image: url("/images/svg/Wheeldown-hover.svg");
+}
+.hero-section__scroll-text {
+  color: #FFFFFF;
 }
 
 .hero-section::after {

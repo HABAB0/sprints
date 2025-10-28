@@ -28,6 +28,12 @@
     padding: 1rem;
     @extend panelsOnWhite;
     border-radius: 24px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+    &:hover {
+        transform: scaleY(1.03);
+        box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
+    }
 }
 
 .advantages__header {
@@ -35,6 +41,12 @@
     align-items: center;
     gap: 0.4rem;
     background: rgba(255, 255, 255, 0.5);
+}
+
+.advantages__container {
+    max-width: 70px;
+    max-height: 70px;
+    object-fit: cover;
 }
 
 .advantages__subtitle {

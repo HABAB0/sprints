@@ -725,8 +725,8 @@ panelsOnBg, .reviews__item {
 .reviews__items {
   display: grid;
   justify-items: end;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 1rem;
+  grid-template-areas: "left    top" "bottom   right";
 }
 
 .reviews__item {
@@ -734,26 +734,37 @@ panelsOnBg, .reviews__item {
   flex-direction: column;
   gap: 2rem;
   border-radius: 16px;
+  max-width: 630px;
   padding: 1rem;
   background: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: transform 0.4s ease;
 }
 
-.reviews__item-simen {
+.reviews__item-top {
+  grid-area: top;
   position: relative;
-  bottom: 60px;
-  right: 320px;
+  transform: translate(-320px, -60px);
   z-index: 10;
 }
 
-.reviews__item-sergay {
+.reviews__item-bottom {
+  grid-area: bottom;
   position: relative;
-  bottom: 20px;
-  left: 160px;
+  transform: translate(180px, 0);
+  z-index: 8;
 }
 
-.reviews__item-inokenti {
+.reviews__item-right {
+  grid-area: right;
   position: relative;
-  bottom: 150px;
+  transform: translate(0, -128px);
+  z-index: 9;
+}
+
+.reviews__item-left {
+  grid-area: left;
+  transform: translate(0, 0);
 }
 
 .reviews__header {
@@ -790,7 +801,7 @@ panelsOnBg, .reviews__item {
 
 .reviews__button {
   position: relative;
-  bottom: 115px;
+  bottom: 80px;
   color: #4754EB;
   background: #FFFFFF;
 }
@@ -803,6 +814,17 @@ panelsOnBg, .reviews__item {
 .reviews__button:active {
   box-shadow: 0 8px 24px 0 rgba(60, 73, 221, 0.1);
   color: #3C49DD;
+}
+
+.reviewers__structure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #808080;
+}
+
+.reviewers__structure-text {
+  display: none;
 }
 
 .reviews::after {

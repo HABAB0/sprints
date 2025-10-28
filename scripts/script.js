@@ -22,12 +22,35 @@ sliderId.forEach( card => {
   })
 })
 
-const reviews = document.querySelector('.reviews__item')
-const leftReviews = ".reviews__item-oleg"
-const topReviews = ".reviews__item-simen"
-const rightReviews = ".reviews__item-inokenti"
-const bottomReviews = ".reviews__item-sergay"
-reviews.forEach((card,index) => {
+const reviews = document.querySelectorAll('.reviews__item')
+const container = document.querySelector('.reviews__items');
+reviews.forEach(card => {
   card.addEventListener('click', () => {
+    const leftReviews = document.querySelector('.reviews__item-left');
+    const topReviews = document.querySelector('.reviews__item-top');
+    const rightReviews = document.querySelector('.reviews__item-right');
+    const bottomReviews = document.querySelector('.reviews__item-bottom');
+
+    leftReviews.classList.replace('reviews__item-left', 'reviews__item-top');
+    topReviews.classList.replace('reviews__item-top', 'reviews__item-right');
+    rightReviews.classList.replace('reviews__item-right', 'reviews__item-bottom');
+    bottomReviews.classList.replace('reviews__item-bottom', 'reviews__item-left');
+
   })
+})
+
+const structure = document.querySelector('.reviews__button')
+const structureText = document.querySelector('.reviewers__structure-text')
+structure.addEventListener('click', () => {
+    const leftReviews = document.querySelector('.reviews__item-left');
+    const topReviews = document.querySelector('.reviews__item-top');
+    const rightReviews = document.querySelector('.reviews__item-right');
+    const bottomReviews = document.querySelector('.reviews__item-bottom');
+
+    leftReviews.classList.remove('reviews__item-left')
+    topReviews.classList.remove('reviews__item-top')
+    rightReviews.classList.remove('reviews__item-right')
+    bottomReviews.classList.remove('reviews__item-bottom')
+    structureText.style.display = ('block')
+    structure.style.display = ('none')
 })

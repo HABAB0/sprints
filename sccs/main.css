@@ -1078,13 +1078,25 @@ panelsOnBg, .reviews__item {
   font-size: 36px;
   line-height: 112%;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .faq__content {
+  overflow: hidden;
+  max-height: 0px;
+  transition: max-height 1s ease;
   color: #808080;
   font-size: 18px;
   line-height: 135%;
   font-weight: 400;
+}
+
+.faq__icon {
+  transform: rotate(0deg);
+  transition: transform 1s ease;
+}
+.faq__icon:hover {
+  transform: rotate(45deg);
 }
 
 .faq::after {

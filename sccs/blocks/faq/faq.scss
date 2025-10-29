@@ -40,11 +40,24 @@
     background: none;
     color: $color-black;
     @include text-style(h2-desk);
+    cursor: pointer;
 }
 
 .faq__content {
+    overflow: hidden;
+    max-height: 0px;
+    transition: max-height 1s ease;
     color: $color-gray;
     @include text-style(body-desk);
+}
+
+.faq__icon {
+    transform: rotate(0deg);
+    transition: transform 1s ease;
+    
+    &:hover {
+        transform: rotate(45deg);
+    }
 }
 
 .faq::after {

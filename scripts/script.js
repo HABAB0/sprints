@@ -35,7 +35,6 @@ reviews.forEach(card => {
     topReviews.classList.replace('reviews__item-top', 'reviews__item-right');
     rightReviews.classList.replace('reviews__item-right', 'reviews__item-bottom');
     bottomReviews.classList.replace('reviews__item-bottom', 'reviews__item-left');
-
   })
 })
 
@@ -53,4 +52,20 @@ structure.addEventListener('click', () => {
     bottomReviews.classList.remove('reviews__item-bottom')
     structureText.style.display = ('block')
     structure.style.display = ('none')
+})
+
+const faqBlock = document.querySelectorAll('.faq__item')
+const faqContent = document.querySelector('.faq__content')
+faqBlock.forEach(item => {
+  item.addEventListener('click', function() {
+    const faqContent = this.querySelector('.faq__content');
+    const faqImage = this.querySelector('.faq__icon')
+    if (faqContent.style.maxHeight === '200px'){
+      faqContent.style.maxHeight = ('0px')
+      faqImage.style.transform = ('rotate(90deg)')
+    } else {
+      faqContent.style.maxHeight = ('200px')
+      faqImage.style.transform = ('rotate(45deg)')
+    }
+  })
 })

@@ -11,9 +11,23 @@
         <header class="header" id="header">
             <div class="header__logo">
                 <div class="header__burger">
-                    <img src="/images/svg/burger-menu.svg" alt="Логотип">
+                    <img class="header__burger-image" src="/images/svg/burger-menu.svg" alt="Логотип">
+                    <div class="burger-menu">
+                        <nav class="burger-menu__nav">
+                            <a href="#how-works" class="burger-menu__menu-link">О компании</a>
+                            <a href="#tarif" class="burger-menu__menu-link">Тарифы</a>
+                            <a href="#reviews" class="burger-menu__menu-link">Отзывы</a>
+                            <a href="#faq" class="burger-menu__menu-link">Q&A</a>
+                            <a href="#feedback" class="burger-menu__menu-link">Обратная связь</a>
+                        </nav>
+                        <div class="burger-menu__lang-switch">
+                            <p class="burger-menu__lang--ru lang-active">Ru</p>
+                            <p>/</p>
+                            <p class="burger-menu__lang--en">En</p>
+                        </div>
+                    </div>
                 </div>
-                <a class="header__logo--text" href="/"><h1>Инстаботы</h1></a>
+                <a class="header__logo-text" href="/"><h1>Инстаботы</h1></a>
             </div>
             <nav class="header__nav">
                 <a href="#how-works" class="header__menu-link">О компании</a>
@@ -23,10 +37,12 @@
                 <a href="#feedback" class="header__menu-link">Обратная связь</a>
             </nav>
             <div class="header__actions">
-                <div class="header__lang-switch">
-                    <p class="header__lang--ru header__lang-active">Ru</p>
-                    <p>/</p>
-                    <p class="header__lang--en">En</p>
+                <div class="header__lang-switch" id="lang--ru">
+                    <div class="header__lang-switch" id="lang--ru">
+                        <p class="header__lang--ru lang-active">Ru</p>
+                        <p>/</p>
+                        <p class="header__lang--en" id="lang--en">En</p>
+                    </div>
                 </div>
                 <button class="header__button main-button">
                     <span class="header__button-text">Вход и регистрация</span>
@@ -37,24 +53,31 @@
             </div>
         </header>
         <section class="hero-section">
-            <div class="hero-section__text">
-                <h2 class="hero-section__title">Высокий уровень вовлечения представителей</h2>
-                <form class="hero-section__form">
-                    <div class="hero-section__inputs">
-                        <input type="email" name="email" placeholder="Введите свой e-mail" class="hero-section__input" required>
-                        <button type="submit" class="hero-section__button main-button">Отправить</button>
-                    </div>
-                    <div>
-                        <p class="hero-section__privacy">Нажимая на кнопку вы соглашаетесь на обработку</p>
-                        <a class="hero-section__privacy-link">персональных данных</a>
-                    </div>
-                </form>
-                <a href="#advantages" class="hero-section__scroll">
-                    <span class="hero-section__scroll-image"></span>
-                    <span class="hero-section__scroll-text">Листайте дальше</span>
-                </a>
+            <div class="hero-section__backgrounds">
+                <img class="hero-section__backgrounds hero-section__backgrounds--blue" src="/images/svg/hero-section-background/blue.svg" alt="background">
+                <img class="hero-section__backgrounds hero-section__backgrounds--white" src="/images/svg/hero-section-background/white.svg" alt="background">
+                <img class="hero-section__backgrounds hero-section__backgrounds--purple" src="/images/svg/hero-section-background/pirple.svg" alt="background">
             </div>
-            <img src="/images/main-pictures/hero-section-picture.svg" alt="Уровень вовлечения">
+            <div class="hero-section__content">
+                <div class="hero-section__text">
+                    <h2 class="hero-section__title">Высокий уровень вовлечения представителей</h2>
+                    <form class="hero-section__form">
+                        <div class="hero-section__inputs">
+                            <input type="email" name="email" placeholder="Введите свой e-mail" class="hero-section__input" required>
+                            <button type="submit" class="hero-section__button main-button">Отправить</button>
+                        </div>
+                        <div>
+                            <p class="hero-section__privacy">Нажимая на кнопку вы соглашаетесь на обработку</p>
+                            <a class="hero-section__privacy-link">персональных данных</a>
+                        </div>
+                    </form>
+                    <a href="#advantages" class="hero-section__scroll">
+                        <span class="hero-section__scroll-image"></span>
+                        <span class="hero-section__scroll-text">Листайте дальше</span>
+                    </a>
+                </div>
+                <img src="/images/main-pictures/hero-section-picture.svg" alt="Уровень вовлечения">
+            </div>
         </section>
         <section class="advantages" id="advantages">
             <h2 class="advantages__title">Наши преймущества</h2>
@@ -89,52 +112,59 @@
             </div>
         </section>
         <section class="how-works" id="how-works" >
-            <div class="how-works__title">Как мы работаем</div>
-            <div class="how-works__container">
-                <img src="/images/main-pictures/how-works-picture.svg" alt="Прмер работы">
-                <div class="how-works__content">
-                    <div class="how-works__slider-elements">
-                        <div class="how-works__element" id="sliderElement">
-                            <div class="how-works__header">
-                                <span class="how-works__scroll">Lorem ipsum</span>
-                                <div class="how-works__line"></div>
-                                <p class="how-works__scroll">Lorem ipsum</p>
-                                <div class="how-works__line"></div>
-                                <p class="how-works__scroll">Lorem ipsum</p>
+            <div class="how-works__backgrounds">
+                <img class="how-works__backgrounds how-works__backgrounds--blue" src="/images/svg/how-worrks/blue.svg" alt="background">
+                <img class="how-works__backgrounds how-works__backgrounds--white" src="/images/svg/how-worrks/white.svg" alt="background">
+                <img class="how-works__backgrounds how-works__backgrounds--purple" src="/images/svg/how-worrks/pirple.svg" alt="background">
+            </div>
+            <div class="how-works__contents">
+                <div class="how-works__title">Как мы работаем</div>
+                <div class="how-works__container">
+                    <img src="/images/main-pictures/how-works-picture.svg" alt="Прмер работы">
+                    <div class="how-works__content">
+                        <div class="how-works__slider-elements">
+                            <div class="how-works__element" id="sliderElement">
+                                <div class="how-works__header">
+                                    <span class="how-works__scroll">Lorem ipsum</span>
+                                    <div class="how-works__line"></div>
+                                    <p class="how-works__scroll">Lorem ipsum</p>
+                                    <div class="how-works__line"></div>
+                                    <p class="how-works__scroll">Lorem ipsum</p>
+                                </div>
+                                <h2 class="how-works__subtitle">Lorem ipsum dolor sit amet, consectetur.</h2>
+                                <p class="how-works__description">Semper sollicitudin ut cursus nunc eu ultricies.</p>
+                                <p class="how-works__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Posuere lorem nulla tincidunt egestas nibh. Non orci, et massa sed vulputate proin. Eu euismod diam, arcu sit vitae nam. Tristique orci, ornare sit vel amet.</p>
+                                <p class="how-works__text">Ut elit dui iaculis malesuada in auctor dui. Sollicitudin varius vitae ut vitae lacus, sem dolor fermentum enim. Orci orci interdum pretium adipiscing augue sit nisl adipiscing.</p>
                             </div>
-                            <h2 class="how-works__subtitle">Lorem ipsum dolor sit amet, consectetur.</h2>
-                            <p class="how-works__description">Semper sollicitudin ut cursus nunc eu ultricies.</p>
-                            <p class="how-works__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Posuere lorem nulla tincidunt egestas nibh. Non orci, et massa sed vulputate proin. Eu euismod diam, arcu sit vitae nam. Tristique orci, ornare sit vel amet.</p>
-                            <p class="how-works__text">Ut elit dui iaculis malesuada in auctor dui. Sollicitudin varius vitae ut vitae lacus, sem dolor fermentum enim. Orci orci interdum pretium adipiscing augue sit nisl adipiscing.</p>
-                        </div>
-                        <div class="how-works__element" id="sliderElement">
-                            <div class="how-works__header">
-                                <p class="how-works__scroll">Lorem ipsum</p>
-                                <div class="how-works__line"></div>
-                                <span class="how-works__scroll">Lorem ipsum</span>
-                                <div class="how-works__line"></div>
-                                <p class="how-works__scroll">Lorem ipsum</p>
+                            <div class="how-works__element" id="sliderElement">
+                                <div class="how-works__header">
+                                    <p class="how-works__scroll">Lorem ipsum</p>
+                                    <div class="how-works__line"></div>
+                                    <span class="how-works__scroll">Lorem ipsum</span>
+                                    <div class="how-works__line"></div>
+                                    <p class="how-works__scroll">Lorem ipsum</p>
+                                </div>
+                                <h2 class="how-works__subtitle">Lorem ipsum dolor sit amet, consectetur.</h2>
+                                <p class="how-works__description">Semper sollicitudin ut cursus nunc eu ultricies.</p>
+                                <p class="how-works__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Posuere lorem nulla tincidunt egestas nibh. Non orci, et massa sed vulputate proin. Eu euismod diam, arcu sit vitae nam. Tristique orci, ornare sit vel amet.</p>
+                                <p class="how-works__text">Ut elit dui iaculis malesuada in auctor dui. Sollicitudin varius vitae ut vitae lacus, sem dolor fermentum enim. Orci orci interdum pretium adipiscing augue sit nisl adipiscing.</p>
                             </div>
-                            <h2 class="how-works__subtitle">Lorem ipsum dolor sit amet, consectetur.</h2>
-                            <p class="how-works__description">Semper sollicitudin ut cursus nunc eu ultricies.</p>
-                            <p class="how-works__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Posuere lorem nulla tincidunt egestas nibh. Non orci, et massa sed vulputate proin. Eu euismod diam, arcu sit vitae nam. Tristique orci, ornare sit vel amet.</p>
-                            <p class="how-works__text">Ut elit dui iaculis malesuada in auctor dui. Sollicitudin varius vitae ut vitae lacus, sem dolor fermentum enim. Orci orci interdum pretium adipiscing augue sit nisl adipiscing.</p>
-                        </div>
-                        <div class="how-works__element" id="sliderElement">
-                            <div class="how-works__header">
-                                <p class="how-works__scroll">Lorem ipsum</p>
-                                <div class="how-works__line"></div>
-                                <p class="how-works__scroll">Lorem ipsum</p>
-                                <div class="how-works__line"></div>
-                                <span class="how-works__scroll">Lorem ipsum</span>
+                            <div class="how-works__element" id="sliderElement">
+                                <div class="how-works__header">
+                                    <p class="how-works__scroll">Lorem ipsum</p>
+                                    <div class="how-works__line"></div>
+                                    <p class="how-works__scroll">Lorem ipsum</p>
+                                    <div class="how-works__line"></div>
+                                    <span class="how-works__scroll">Lorem ipsum</span>
+                                </div>
+                                <h2 class="how-works__subtitle">Lorem ipsum dolor sit amet, consectetur.</h2>
+                                <p class="how-works__description">Semper sollicitudin ut cursus nunc eu ultricies.</p>
+                                <p class="how-works__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Posuere lorem nulla tincidunt egestas nibh. Non orci, et massa sed vulputate proin. Eu euismod diam, arcu sit vitae nam. Tristique orci, ornare sit vel amet.</p>
+                                <p class="how-works__text">Ut elit dui iaculis malesuada in auctor dui. Sollicitudin varius vitae ut vitae lacus, sem dolor fermentum enim. Orci orci interdum pretium adipiscing augue sit nisl adipiscing.</p>
                             </div>
-                            <h2 class="how-works__subtitle">Lorem ipsum dolor sit amet, consectetur.</h2>
-                            <p class="how-works__description">Semper sollicitudin ut cursus nunc eu ultricies.</p>
-                            <p class="how-works__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Posuere lorem nulla tincidunt egestas nibh. Non orci, et massa sed vulputate proin. Eu euismod diam, arcu sit vitae nam. Tristique orci, ornare sit vel amet.</p>
-                            <p class="how-works__text">Ut elit dui iaculis malesuada in auctor dui. Sollicitudin varius vitae ut vitae lacus, sem dolor fermentum enim. Orci orci interdum pretium adipiscing augue sit nisl adipiscing.</p>
                         </div>
+                        <button class="how-works__button main-button">Забронировать звонок</button>
                     </div>
-                    <button class="how-works__button main-button">Забронировать звонок</button>
                 </div>
             </div>
         </section>
@@ -381,9 +411,15 @@
             </div>
         </section>
         <section class="faq" id="faq">
-            <h2 class="faq__title">Часто задаваемые вопросы</h2>
-            <div class="faq__container">
-                <div class="faq__item">
+            <div class="faq__backgrounds">
+                <img class="faq__backgrounds faq__backgrounds--blue" src="/images/svg/faq-background/blue.svg" alt="background">
+                <img class="faq__backgrounds faq__backgrounds--white" src="/images/svg/faq-background/white.svg" alt="background">
+                <img class="faq__backgrounds faq__backgrounds--purple" src="/images/svg/faq-background/pirple.svg" alt="background">
+            </div>
+            <div class="faq__contents">
+                <h2 class="faq__title">Часто задаваемые вопросы</h2>
+                <div class="faq__container">
+                    <div class="faq__item">
                         <button class="faq__header">
                             <span class="faq__text">
                                 <span class="faq__description">Первый вопрос</span>
@@ -395,8 +431,8 @@
                         <div class="faq__content">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa mi aliquet eu interdum eu pellentesque amet, fermentum hendrerit. Nunc hendrerit nec risus adipiscing lacus, lobortis lectus cursus nunc. Id pellentesque dapibus eu tincidunt dui id tortor, porttitor. Tincidunt nunc praesent euismod in nisl, tellus suspendisse morbi nam. Egestas eget erat malesuada gravida. Et enim integer quam orci, cursus tincidunt mauris, sit.</p>
                         </div>
-                </div>
-                <div class="faq__item">
+                    </div>
+                    <div class="faq__item">
                         <button class="faq__header">
                             <span class="faq__text">
                                 <span class="faq__description">Первый вопрос</span>
@@ -408,8 +444,8 @@
                         <div class="faq__content">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa mi aliquet eu interdum eu pellentesque amet, fermentum hendrerit. Nunc hendrerit nec risus adipiscing lacus, lobortis lectus cursus nunc. Id pellentesque dapibus eu tincidunt dui id tortor, porttitor. Tincidunt nunc praesent euismod in nisl, tellus suspendisse morbi nam. Egestas eget erat malesuada gravida. Et enim integer quam orci, cursus tincidunt mauris, sit.</p>
                         </div>
-                </div>
-                <div class="faq__item">
+                    </div>
+                    <div class="faq__item">
                         <button class="faq__header">
                             <span class="faq__text">
                                 <span class="faq__description">Первый вопрос</span>
@@ -421,8 +457,8 @@
                         <div class="faq__content">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa mi aliquet eu interdum eu pellentesque amet, fermentum hendrerit. Nunc hendrerit nec risus adipiscing lacus, lobortis lectus cursus nunc. Id pellentesque dapibus eu tincidunt dui id tortor, porttitor. Tincidunt nunc praesent euismod in nisl, tellus suspendisse morbi nam. Egestas eget erat malesuada gravida. Et enim integer quam orci, cursus tincidunt mauris, sit.</p>
                         </div>
-                </div>
-                <div class="faq__item">
+                    </div>
+                    <div class="faq__item">
                         <button class="faq__header">
                             <span class="faq__text">
                                 <span class="faq__description">Первый вопрос</span>
@@ -434,6 +470,7 @@
                         <div class="faq__content">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa mi aliquet eu interdum eu pellentesque amet, fermentum hendrerit. Nunc hendrerit nec risus adipiscing lacus, lobortis lectus cursus nunc. Id pellentesque dapibus eu tincidunt dui id tortor, porttitor. Tincidunt nunc praesent euismod in nisl, tellus suspendisse morbi nam. Egestas eget erat malesuada gravida. Et enim integer quam orci, cursus tincidunt mauris, sit.</p>
                         </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -458,7 +495,7 @@
                 </div>
             </div>
             <div class="feedback__image">
-                <img src="/images/main-pictures/feedback.png" alt="Поддержка">
+                <img src="/images/main-pictures/feedback/feedback.png" alt="Поддержка">
             </div>
         </section>
         <footer class="footer">

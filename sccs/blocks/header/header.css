@@ -28,11 +28,15 @@ panelsOnBg {
   display: none;
 }
 
-.header__logo--text {
+.header__burger-image {
+  cursor: pointer;
+}
+
+.header__logo-text {
   text-decoration: none;
 }
 
-.header__logo--text h1 {
+.header__logo-text h1 {
   color: #4754EB;
   font-size: 18px;
   line-height: 135%;
@@ -89,10 +93,6 @@ panelsOnBg {
   color: #505DEC;
 }
 
-.header__lang-active {
-  color: #4754EB;
-}
-
 .header__button {
   display: flex;
   align-items: center;
@@ -124,8 +124,6 @@ panelsOnBg {
   .header__nav {
     display: none;
   }
-}
-@media (max-width: 768px) {
   .header__burger {
     display: block;
   }

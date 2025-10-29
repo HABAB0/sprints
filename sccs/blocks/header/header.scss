@@ -18,11 +18,15 @@
   display: none;
 }
 
-.header__logo--text {
+.header__burger-image {
+  cursor: pointer;
+}
+
+.header__logo-text {
   text-decoration: none;
 }
 
-.header__logo--text h1 {
+.header__logo-text h1 {
   color: $color-blue;
   @include text-style(headline-desk);
 }
@@ -42,7 +46,6 @@
   transition: color 0.4s ease;
   &:hover {
     color: $color-hover-blue;
-    
   }
 }
 
@@ -74,10 +77,6 @@
   &:hover {
     color: $color-hover-blue;
   }
-}
-
-.header__lang-active {
-  color: $color-blue;
 }
 
 .header__button {
@@ -112,12 +111,13 @@
   .header__nav {
     display: none;
   }
-}
-
-@media (max-width: 768px){
   .header__burger {
     display: block;
   } 
+}
+
+@media (max-width: 768px){
+  
 }
 
 @media (max-width: 500px){

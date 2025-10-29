@@ -1,10 +1,15 @@
 @use "../variables/_variables" as *;
 
 .how-works {
+    overflow: hidden;
     position: relative;
+}
+
+.how-works__contents {
     display: flex;
     padding: 4rem 2.5rem;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .how-works__title {
@@ -45,6 +50,10 @@
 
 .how-works__scroll {
     cursor: pointer;
+    
+    &:hover {
+        color: $color-hover-blue;
+    }
 }
 
 .how-works__wrapper {
@@ -104,19 +113,52 @@
   background-color: $color-inactive-blue;
 }
 
-.how-works::after {
-  content: '';
+.how-works__backgrounds {
   position: absolute;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: url('/images/svg/background/background-how-works.svg') center;
-  filter: blur(240px);
   z-index: -1;
+  animation: float 15s ease-out infinite;
+  filter: blur(240px);
 }
 
-@media (max-width: 950px){
+.how-works__backgrounds--blue {
+  top: 50%;
+  right: 10%;
+  width: 30%;
+  height: auto;
+}
+
+.how-works__backgrounds--white {
+  top: 20%;
+  left: 20%;
+  width: 40%;
+  height: auto;
+}
+
+.how-works__backgrounds--purple {
+  top: 60%;
+  left: 0%;
+  width: 25%;
+  height: auto;
+  z-index: 1;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(80%, -60%) scale(1.05);
+  }
+  100% {
+    transform: translate(10%, 20%) scale(1);
+  }
+}
+
+@media (max-width: 1000px){
     .how-works__container {
         grid-template-columns: repeat(1, 1fr);
         gap: 0;
@@ -124,11 +166,6 @@
 
     .how-works__content {
         gap: 3rem;
-    }
-
-    .how-works::after {
-        max-width: 768px;
-        background: url('/images/svg/mobile768-bg/background-how-works-mobile.svg')no-repeat center;
     }
 }
 
@@ -169,8 +206,5 @@
         @include text-style(span-mob);
     }
 
-    .how-works::after {
-        max-width: 375px;
-        background: url('/images/svg/mobile375-bg/background-how-works-mobile.svg')no-repeat center;
-    }
+
 }

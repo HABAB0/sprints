@@ -11,7 +11,11 @@ panelsOnBg {
 }
 
 .faq {
+  overflow: hidden;
   position: relative;
+}
+
+.faq__contents {
   display: flex;
   flex-direction: column;
   padding: 4rem 0;
@@ -81,18 +85,51 @@ panelsOnBg {
   max-width: 200px;
 }
 
-.faq::after {
-  content: "";
+.faq__backgrounds {
   position: absolute;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: url("/images/svg/background/background-faq.svg") no-repeat center;
+  z-index: -10;
+  position: absolute;
+  animation: float 15s ease-out infinite;
   filter: blur(240px);
-  z-index: -1;
 }
 
+.faq__backgrounds--blue {
+  top: 30%;
+  right: 10%;
+  width: 30%;
+  height: auto;
+}
+
+.faq__backgrounds--white {
+  top: 10%;
+  left: 5%;
+  width: 40%;
+  height: auto;
+}
+
+.faq__backgrounds--purple {
+  top: 50%;
+  left: 70%;
+  width: 25%;
+  height: auto;
+  z-index: 1;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(80%, -60%) scale(1.05);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
 @media (max-width: 1000px) {
   .faq::after {
     max-width: 768px;

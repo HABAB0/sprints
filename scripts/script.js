@@ -70,19 +70,54 @@ faqBlock.forEach(item => {
   })
 })
 
-const languageRu = document.querySelector('.header__lang--ru')
-const languageEn = document.querySelector('.header__lang--en')
+const languageRu = document.querySelectorAll('.header__lang--ru, .burger-menu__lang--ru');
+const languageEn = document.querySelectorAll('.header__lang--en, .burger-menu__lang--en');
 
-languageRu.addEventListener('click', () => {
-  if (languageRu.classList != ('header__lang--ru header__lang-active')){
-    languageRu.classList.add('header__lang-active')
-    languageEn.classList.remove('header__lang-active')
+languageRu.forEach(element =>{
+  element.addEventListener('click', () => {
+    languageRu.forEach(ru => ru.classList.add('lang-active'));
+    languageEn.forEach(en => en.classList.remove('lang-active'));
+    
+  })
+})
+
+languageEn.forEach(element =>{
+  element.addEventListener('click', () => {
+    languageEn.forEach(en => en.classList.add('lang-active'));
+    languageRu.forEach(ru => ru.classList.remove('lang-active'));
+  })
+})
+
+const burgerMenuImage = document.querySelector('.header__burger-image');
+const burgerMenu = document.querySelector('.burger-menu');
+
+function setIcon() {
+  if (burgerMenu.classList.contains('burger-menu--open')) {
+    burgerMenuImage.src = `/images/svg/burger-opened.svg`;
+  } else {
+    burgerMenuImage.src = `/images/svg/burger-menu.svg`;
+  }
+}
+
+function setHoverIcon() {
+  if (burgerMenu.classList.contains('burger-menu--open')) {
+    burgerMenuImage.src = `/images/svg/burger-opened-hover.svg`;
+  } else {
+    burgerMenuImage.src = `/images/svg/burger-menu-hover.svg`;
+  }
+}
+
+setIcon()
+burgerMenuImage.addEventListener('mouseover', setHoverIcon);
+burgerMenuImage.addEventListener('mouseout', setIcon);
+
+burgerMenuImage.addEventListener('click', () => {
+  if(burgerMenu.classList.contains('burger-menu--open')){
+    burgerMenu.classList.remove('burger-menu--open')
+    setIcon();
+  }else{
+    burgerMenu.classList.add('burger-menu--open')
+    setIcon();
   }
 })
 
-languageEn.addEventListener('click', () => {
-  if (languageEn.classList != ('header__lang--en header__lang-active')){
-    languageEn.classList.add('header__lang-active')
-    languageRu.classList.remove('header__lang-active')
-  }
-})

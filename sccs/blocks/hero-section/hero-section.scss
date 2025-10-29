@@ -1,7 +1,11 @@
 @use "../variables/_variables" as *;
 
 .hero-section {
+    overflow: hidden;
     position: relative;
+}
+
+.hero-section__content {
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
@@ -119,21 +123,58 @@
     }
 }
 
-.hero-section::after {
-  content: '';
+.hero-section__backgrounds {
   position: absolute;
-  max-width: 1392px;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: url('/images/svg/background/background-hero-section.svg')no-repeat center;
-  filter: blur(240px);
   z-index: -1;
 }
 
+.hero-section__backgrounds {
+  position: absolute;
+  animation: float 15s ease-out infinite;
+  filter: blur(240px);
+}
+
+.hero-section__backgrounds--blue {
+  top: 30%;
+  right: 10%;
+  width: 30%;
+  height: auto;
+}
+
+.hero-section__backgrounds--white {
+  top: 10%;
+  left: 5%;
+  width: 40%;
+  height: auto;
+}
+
+.hero-section__backgrounds--purple {
+  top: 50%;
+  left: 70%;
+  width: 25%;
+  height: auto;
+  z-index: 1;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(80%, -60%) scale(1.05);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+
 @media (max-width: 1000px){
-    .hero-section{
+    .hero-section__content{
         grid-template-columns: repeat(1, 1fr);
         gap: 0;
     }

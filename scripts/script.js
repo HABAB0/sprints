@@ -62,10 +62,27 @@ faqBlock.forEach(item => {
     const faqImage = this.querySelector('.faq__icon')
     if (faqContent.style.maxHeight === '200px'){
       faqContent.style.maxHeight = ('0px')
-      faqImage.style.transform = ('rotate(90deg)')
+      faqImage.classList.remove = ('open')
     } else {
       faqContent.style.maxHeight = ('200px')
-      faqImage.style.transform = ('rotate(45deg)')
+      faqImage.classList.add = ('open')
     }
   })
+})
+
+const languageRu = document.querySelector('.header__lang--ru')
+const languageEn = document.querySelector('.header__lang--en')
+
+languageRu.addEventListener('click', () => {
+  if (languageRu.classList != ('header__lang--ru header__lang-active')){
+    languageRu.classList.add('header__lang-active')
+    languageEn.classList.remove('header__lang-active')
+  }
+})
+
+languageEn.addEventListener('click', () => {
+  if (languageEn.classList != ('header__lang--en header__lang-active')){
+    languageEn.classList.add('header__lang-active')
+    languageRu.classList.remove('header__lang-active')
+  }
 })

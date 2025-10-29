@@ -58,11 +58,26 @@
   cursor: pointer;
   color: $color-gray;
   @include text-style(body-desk);
+  transition: color 0.4s ease;
 }
 
 .header__lang--ru {
-  color: $color-blue;
   @include text-style(headline-desk);
+  
+  &:hover {
+    color: $color-hover-blue;
+  }
+}
+
+.header__lang--en {
+  
+  &:hover {
+    color: $color-hover-blue;
+  }
+}
+
+.header__lang-active {
+  color: $color-blue;
 }
 
 .header__button {

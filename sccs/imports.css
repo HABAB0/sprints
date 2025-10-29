@@ -73,13 +73,24 @@ panelsOnBg, .reviews__item {
   font-size: 18px;
   line-height: 135%;
   font-weight: 400;
+  transition: color 0.4s ease;
 }
 
 .header__lang--ru {
-  color: #4754EB;
   font-size: 18px;
   line-height: 135%;
   font-weight: 500;
+}
+.header__lang--ru:hover {
+  color: #505DEC;
+}
+
+.header__lang--en:hover {
+  color: #505DEC;
+}
+
+.header__lang-active {
+  color: #4754EB;
 }
 
 .header__button {
@@ -1084,7 +1095,7 @@ panelsOnBg, .reviews__item {
 .faq__content {
   overflow: hidden;
   max-height: 0px;
-  transition: max-height 0.4s ease;
+  transition: max-height 1s ease;
   color: #808080;
   font-size: 18px;
   line-height: 135%;
@@ -1097,6 +1108,11 @@ panelsOnBg, .reviews__item {
 }
 .faq__icon:hover {
   transform: rotate(45deg);
+}
+
+.faq__item.open, .faq__icon {
+  transform: rotate(90deg);
+  max-width: 200px;
 }
 
 .faq::after {

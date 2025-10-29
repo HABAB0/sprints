@@ -60,6 +60,10 @@
     }
 }
 
+.faq__item.open, .faq__icon {
+  transform: rotate(90deg);
+  max-width: 200px;
+}
 .faq::after {
   content: '';
   position: absolute;

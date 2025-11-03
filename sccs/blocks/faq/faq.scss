@@ -64,8 +64,8 @@
     }
 }
 
-.faq__item.open, .faq__icon {
-  transform: rotate(90deg);
+.faq__item--open{
+  transform: rotate(45deg);
   max-width: 200px;
 }
 

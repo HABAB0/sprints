@@ -14,7 +14,7 @@ panelsOnBg {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4rem 2.5rem;
+  padding: 1rem 2.5rem;
   background: #4754EB;
   border-radius: 0 0 24px 24px;
   color: #FFFFFF;

@@ -1184,7 +1184,7 @@ panelsOnBg, .reviews__item {
 }
 
 .faq__item.open, .faq__icon {
-  transform: rotate(90deg);
+  transform: rotate(45deg);
   max-width: 200px;
 }
 

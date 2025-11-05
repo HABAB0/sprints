@@ -53,6 +53,7 @@ reviewsSwapCards = () => {
       topReviews = document.querySelector('.reviews__item-top');
       rightReviews = document.querySelector('.reviews__item-right');
       bottomReviews = document.querySelector('.reviews__item-bottom');
+      
       leftReviews.classList.remove('reviews__item-left')
       topReviews.classList.remove('reviews__item-top')
       rightReviews.classList.remove('reviews__item-right')

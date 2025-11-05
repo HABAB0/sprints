@@ -282,45 +282,47 @@ panelsOnBg, .reviews__item {
   width: 100%;
   height: 100%;
   z-index: -1;
+  filter: blur(0px);
 }
 
-.hero-section__backgrounds {
-  position: absolute;
-  animation: float 15s ease-out infinite;
-  filter: blur(240px);
+.hero-section__backgrounds-circles {
+  height: 20rem;
+  top: 40%;
+  left: 30%;
+  animation: path 20s ease-in-out infinite;
 }
 
-.hero-section__backgrounds--blue {
-  top: 30%;
-  right: 10%;
-  width: 30%;
-  height: auto;
-}
-
-.hero-section__backgrounds--white {
-  top: 10%;
-  left: 5%;
-  width: 40%;
-  height: auto;
-}
-
-.hero-section__backgrounds--purple {
+.hero-section__backgrounds-blue {
+  height: 20rem;
   top: 50%;
-  left: 70%;
-  width: 25%;
-  height: auto;
-  z-index: 1;
+  left: -20%;
+  animation: path 20s ease-in-out infinite;
 }
 
-@keyframes float {
+.hero-section__backgrounds-white {
+  height: 20rem;
+  top: 0%;
+  left: -10%;
+  animation: path 20s ease-in-out infinite;
+}
+
+.hero-section__backgrounds-pirple {
+  height: 10rem;
+  top: 40%;
+  left: -40%;
+  animation: path 20s ease-in-out infinite;
+}
+
+@keyframes path {
   0% {
-    transform: translate(0, 0) scale(1);
+    transform: translate(-120px, 200px);
   }
   50% {
-    transform: translate(80%, -60%) scale(1.05);
+    transform: translate(300px, -50px);
+    rotate: 130deg;
   }
   100% {
-    transform: translate(0, 0) scale(1);
+    transform: translate(120px, 100px);
   }
 }
 @media (max-width: 1000px) {
@@ -335,10 +337,6 @@ panelsOnBg, .reviews__item {
   }
   .hero-section__scroll {
     display: none;
-  }
-  .hero-section::after {
-    max-width: 768px;
-    background: url("/images/svg/mobile768-bg/background-hero-mobile.svg") no-repeat center;
   }
 }
 @media (max-width: 620px) {
@@ -368,10 +366,6 @@ panelsOnBg, .reviews__item {
     font-size: 14px;
     line-height: 135%;
     font-weight: 400;
-  }
-  .hero-section::after {
-    max-width: 375px;
-    background: url("/images/svg/mobile375-bg/background-hero-mobile.svg") no-repeat center;
   }
 }
 .advantages {
@@ -811,6 +805,7 @@ panelsOnBg, .reviews__item {
   position: relative;
   display: flex;
   padding: 4rem 2.5rem 2rem 4rem;
+  gap: 2rem;
   flex-direction: column;
 }
 
@@ -819,14 +814,14 @@ panelsOnBg, .reviews__item {
   font-size: 36px;
   line-height: 112%;
   font-weight: 500;
-  padding-bottom: 3rem;
 }
 
 .reviews__items {
   display: grid;
   justify-items: end;
-  gap: 1rem;
-  grid-template-areas: "left    top" "bottom   right";
+  gap: 3rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
 .reviews__item {
@@ -838,33 +833,33 @@ panelsOnBg, .reviews__item {
   padding: 1rem;
   background: rgb(255, 255, 255);
   cursor: pointer;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease-in-out;
 }
 
 .reviews__item-top {
   grid-area: top;
   position: relative;
-  transform: translate(-320px, -60px);
   z-index: 10;
+  transform: translate(-250px, -425px);
 }
 
 .reviews__item-bottom {
   grid-area: bottom;
   position: relative;
-  transform: translate(180px, 0);
   z-index: 8;
+  transform: translate(-500px, -50px);
 }
 
 .reviews__item-right {
   grid-area: right;
   position: relative;
-  transform: translate(0, -128px);
   z-index: 9;
+  transform: translate(-15px, -200px);
 }
 
 .reviews__item-left {
   grid-area: left;
-  transform: translate(0, 0);
+  transform: translate(-600px, -350px);
 }
 
 .reviews__header {
@@ -901,7 +896,8 @@ panelsOnBg, .reviews__item {
 
 .reviews__button {
   position: relative;
-  bottom: 80px;
+  top: 500px;
+  left: 1040px;
   color: #4754EB;
   background: #FFFFFF;
 }
@@ -1183,7 +1179,7 @@ panelsOnBg, .reviews__item {
   transform: rotate(45deg);
 }
 
-.faq__item.open, .faq__icon {
+.faq__item--open {
   transform: rotate(45deg);
   max-width: 200px;
 }
@@ -1310,6 +1306,7 @@ panelsOnBg, .reviews__item {
   line-height: 135%;
   font-weight: 400;
   transition: box-shadow 0.4s ease, color 0.4s ease;
+  resize: none;
 }
 .feedback__input:hover {
   box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
@@ -1413,7 +1410,7 @@ panelsOnBg, .reviews__item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4rem 2.5rem;
+  padding: 1rem 2.5rem;
   background: #4754EB;
   border-radius: 0 0 24px 24px;
   color: #FFFFFF;

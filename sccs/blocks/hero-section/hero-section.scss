@@ -130,45 +130,54 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-}
-
-.hero-section__backgrounds {
-  position: absolute;
-  animation: float 15s ease-out infinite;
   filter: blur(240px);
+  
 }
 
-.hero-section__backgrounds--blue {
-  top: 30%;
-  right: 10%;
-  width: 30%;
-  height: auto;
+.hero-section__backgrounds-circles {
+    height: 15rem;
+    top: 40%;
+    left: 30%;
+    animation: path 20s ease-in-out infinite;
 }
 
-.hero-section__backgrounds--white {
-  top: 10%;
-  left: 5%;
-  width: 40%;
-  height: auto;
+.hero-section__backgrounds-blue {
+    height: 15rem;
+    top: 50%;
+    left: -20%;
+    animation: path 20s ease-in-out infinite;
 }
 
-.hero-section__backgrounds--purple {
-  top: 50%;
-  left: 70%;
-  width: 25%;
-  height: auto;
-  z-index: 1;
+.hero-section__backgrounds-white {
+    height: 15rem;
+    top: 0%;
+    left: -10%;
+    animation: path 20s ease-in-out infinite;
 }
 
-@keyframes float {
+.hero-section__backgrounds-pirple {
+    height: 12rem;
+    top: 40%;
+    left: -40%;
+    animation: path 20s ease-in-out infinite;
+}
+
+
+
+
+@keyframes path {
   0% {
-    transform: translate(0, 0) scale(1);
+    transform: translate(0, 0);
   }
-  50% {
-    transform: translate(80%, -60%) scale(1.05);
+  25% {
+    transform: translate(180px, -80px);
+    rotate: 45deg;
+  }
+  75% {
+    transform: translate(240px, -150px);
   }
   100% {
-    transform: translate(0, 0) scale(1);
+    transform: translate(0, 0);
   }
 }
 
@@ -187,11 +196,6 @@
 
     .hero-section__scroll{
         display: none;
-    }
-
-    .hero-section::after {
-        max-width: 768px;
-        background: url('/images/svg/mobile768-bg/background-hero-mobile.svg')no-repeat center;
     }
 }
 
@@ -216,10 +220,5 @@
 
     .hero-section__scroll {
         @include text-style(table-text-mob);
-    }
-
-    .hero-section::after {
-        max-width: 375px;
-        background: url('/images/svg/mobile375-bg/background-hero-mobile.svg')no-repeat center;
     }
 }

@@ -4,22 +4,21 @@
     position: relative;
     display: flex;
     padding: 4rem 2.5rem 2rem 4rem ;
+    gap: 2rem;
     flex-direction: column;
 }
 
 .reviews__title {
     color: $color-black;
     @include text-style(h2-desk);
-    padding-bottom: 3rem;
 }
 
 .reviews__items {
     display: grid;
     justify-items: end;
-    gap: 1rem;
-    grid-template-areas:
-    "left    top"
-    "bottom   right";
+    gap: 3rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 
 .reviews__item {
@@ -32,33 +31,33 @@
     background: rgba(255, 255, 255, 1);
     @extend panelsOnBg;
     cursor: pointer;
-    transition: transform 0.4s ease;
+    transition: transform 0.4s ease-in-out;
 }
 
 .reviews__item-top {
     grid-area: top;
     position: relative;
-    transform: translate(-320px, -60px);
     z-index: 10;
+    transform: translate(-250px, -425px);
 }
 
 .reviews__item-bottom {
     grid-area: bottom;
     position: relative;
-    transform: translate(180px, 0);
     z-index: 8;
+    transform: translate(-500px, -50px);
 }
 
 .reviews__item-right {
     grid-area: right;
     position: relative;
-    transform: translate(0, -128px);
     z-index: 9;
+    transform: translate(-15px, -200px);
 } 
 
 .reviews__item-left {
-  grid-area: left;
-  transform: translate(0, 0);
+    grid-area: left;
+    transform: translate(-600px, -350px);
 }
 
 .reviews__header {
@@ -89,7 +88,8 @@
 
 .reviews__button {
     position: relative;
-    bottom: 80px;
+    top: 500px;
+    left: 1040px;
     color: $color-blue;
     background: $color-white;
 }
@@ -115,20 +115,66 @@
     display: none;
 }
 
-.reviews::after {
-  content: '';
+.reviews__backgrounds {
   position: absolute;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: url('/images/svg/background/background-rewiews.svg') center;
-  filter: blur(240px);
   z-index: -1;
+  filter: blur(240px);
+  
+}
+
+.reviews__backgrounds-circles {
+    height: 15rem;
+    top: 0%;
+    left: 30%;
+    animation: path 20s ease-in-out infinite;
+}
+
+.reviews__backgrounds-blue {
+    height: 22rem;
+    top: 50%;
+    left: 30%;
+    animation: path 20s ease-in-out infinite;
+}
+
+.reviews__backgrounds-white {
+    height: 15rem;
+    top: 70%;
+    left: -30%;
+    animation: path 20s ease-in-out infinite;
+}
+
+.reviews__backgrounds-pirple {
+    height: 12rem;
+    z-index: 10;
+    top: 45%;
+    left: 30%;
+    animation: path 20s ease-in-out infinite;
 }
 
 
-@media (max-width: 1000px){
+@keyframes path {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(180px, -80px);
+    rotate: 45deg;
+  }
+  75% {
+    transform: translate(240px, -150px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+
+
+@media (max-width: 1350px){
 
     .reviews__items{
         grid-template-areas: initial;
@@ -142,6 +188,7 @@
         transform: none;
         max-width: none;
         grid-area: auto;
+        cursor: auto;
     }
 
     .reviews__button {

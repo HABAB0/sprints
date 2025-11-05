@@ -282,45 +282,50 @@ panelsOnBg, .reviews__item {
   width: 100%;
   height: 100%;
   z-index: -1;
-}
-
-.hero-section__backgrounds {
-  position: absolute;
-  animation: float 15s ease-out infinite;
   filter: blur(240px);
 }
 
-.hero-section__backgrounds--blue {
-  top: 30%;
-  right: 10%;
-  width: 30%;
-  height: auto;
+.hero-section__backgrounds-circles {
+  height: 15rem;
+  top: 40%;
+  left: 30%;
+  animation: path 20s ease-in-out infinite;
 }
 
-.hero-section__backgrounds--white {
-  top: 10%;
-  left: 5%;
-  width: 40%;
-  height: auto;
-}
-
-.hero-section__backgrounds--purple {
+.hero-section__backgrounds-blue {
+  height: 15rem;
   top: 50%;
-  left: 70%;
-  width: 25%;
-  height: auto;
-  z-index: 1;
+  left: -20%;
+  animation: path 20s ease-in-out infinite;
 }
 
-@keyframes float {
+.hero-section__backgrounds-white {
+  height: 15rem;
+  top: 0%;
+  left: -10%;
+  animation: path 20s ease-in-out infinite;
+}
+
+.hero-section__backgrounds-pirple {
+  height: 12rem;
+  top: 40%;
+  left: -40%;
+  animation: path 20s ease-in-out infinite;
+}
+
+@keyframes path {
   0% {
-    transform: translate(0, 0) scale(1);
+    transform: translate(0, 0);
   }
-  50% {
-    transform: translate(80%, -60%) scale(1.05);
+  25% {
+    transform: translate(180px, -80px);
+    rotate: 45deg;
+  }
+  75% {
+    transform: translate(240px, -150px);
   }
   100% {
-    transform: translate(0, 0) scale(1);
+    transform: translate(0, 0);
   }
 }
 @media (max-width: 1000px) {
@@ -335,10 +340,6 @@ panelsOnBg, .reviews__item {
   }
   .hero-section__scroll {
     display: none;
-  }
-  .hero-section::after {
-    max-width: 768px;
-    background: url("/images/svg/mobile768-bg/background-hero-mobile.svg") no-repeat center;
   }
 }
 @media (max-width: 620px) {
@@ -368,10 +369,6 @@ panelsOnBg, .reviews__item {
     font-size: 14px;
     line-height: 135%;
     font-weight: 400;
-  }
-  .hero-section::after {
-    max-width: 375px;
-    background: url("/images/svg/mobile375-bg/background-hero-mobile.svg") no-repeat center;
   }
 }
 .advantages {
@@ -592,41 +589,50 @@ panelsOnBg, .reviews__item {
   width: 100%;
   height: 100%;
   z-index: -1;
-  animation: float 15s ease-out infinite;
   filter: blur(240px);
 }
 
-.how-works__backgrounds--blue {
-  top: 50%;
-  right: 10%;
-  width: 30%;
-  height: auto;
+.how-works__backgrounds-circles {
+  height: 20rem;
+  top: 40%;
+  left: -30%;
+  animation: path 20s ease-in-out infinite;
 }
 
-.how-works__backgrounds--white {
-  top: 20%;
+.how-works__backgrounds-blue {
+  height: 25rem;
+  top: -20%;
   left: 20%;
-  width: 40%;
-  height: auto;
+  animation: path 20s ease-in-out infinite;
 }
 
-.how-works__backgrounds--purple {
-  top: 60%;
-  left: 0%;
-  width: 25%;
-  height: auto;
-  z-index: 1;
+.how-works__backgrounds-white {
+  height: 15rem;
+  top: 70%;
+  left: 20%;
+  animation: path 20s ease-in-out infinite;
 }
 
-@keyframes float {
+.how-works__backgrounds-pirple {
+  height: 12rem;
+  top: 0%;
+  left: -10%;
+  animation: path 20s ease-in-out infinite;
+}
+
+@keyframes path {
   0% {
-    transform: translate(0, 0) scale(1);
+    transform: translate(0, 0);
   }
-  50% {
-    transform: translate(80%, -60%) scale(1.05);
+  25% {
+    transform: translate(180px, -80px);
+    rotate: 45deg;
+  }
+  75% {
+    transform: translate(240px, -150px);
   }
   100% {
-    transform: translate(10%, 20%) scale(1);
+    transform: translate(0, 0);
   }
 }
 @media (max-width: 1000px) {
@@ -811,6 +817,7 @@ panelsOnBg, .reviews__item {
   position: relative;
   display: flex;
   padding: 4rem 2.5rem 2rem 4rem;
+  gap: 2rem;
   flex-direction: column;
 }
 
@@ -819,14 +826,14 @@ panelsOnBg, .reviews__item {
   font-size: 36px;
   line-height: 112%;
   font-weight: 500;
-  padding-bottom: 3rem;
 }
 
 .reviews__items {
   display: grid;
   justify-items: end;
-  gap: 1rem;
-  grid-template-areas: "left    top" "bottom   right";
+  gap: 3rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
 .reviews__item {
@@ -838,33 +845,33 @@ panelsOnBg, .reviews__item {
   padding: 1rem;
   background: rgb(255, 255, 255);
   cursor: pointer;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease-in-out;
 }
 
 .reviews__item-top {
   grid-area: top;
   position: relative;
-  transform: translate(-320px, -60px);
   z-index: 10;
+  transform: translate(-250px, -425px);
 }
 
 .reviews__item-bottom {
   grid-area: bottom;
   position: relative;
-  transform: translate(180px, 0);
   z-index: 8;
+  transform: translate(-500px, -50px);
 }
 
 .reviews__item-right {
   grid-area: right;
   position: relative;
-  transform: translate(0, -128px);
   z-index: 9;
+  transform: translate(-15px, -200px);
 }
 
 .reviews__item-left {
   grid-area: left;
-  transform: translate(0, 0);
+  transform: translate(-600px, -350px);
 }
 
 .reviews__header {
@@ -901,7 +908,8 @@ panelsOnBg, .reviews__item {
 
 .reviews__button {
   position: relative;
-  bottom: 80px;
+  top: 500px;
+  left: 1040px;
   color: #4754EB;
   background: #FFFFFF;
 }
@@ -927,19 +935,61 @@ panelsOnBg, .reviews__item {
   display: none;
 }
 
-.reviews::after {
-  content: "";
+.reviews__backgrounds {
   position: absolute;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: url("/images/svg/background/background-rewiews.svg") center;
-  filter: blur(240px);
   z-index: -1;
+  filter: blur(240px);
 }
 
-@media (max-width: 1000px) {
+.reviews__backgrounds-circles {
+  height: 15rem;
+  top: 0%;
+  left: 30%;
+  animation: path 20s ease-in-out infinite;
+}
+
+.reviews__backgrounds-blue {
+  height: 22rem;
+  top: 50%;
+  left: 30%;
+  animation: path 20s ease-in-out infinite;
+}
+
+.reviews__backgrounds-white {
+  height: 15rem;
+  top: 70%;
+  left: -30%;
+  animation: path 20s ease-in-out infinite;
+}
+
+.reviews__backgrounds-pirple {
+  height: 12rem;
+  z-index: 10;
+  top: 45%;
+  left: 30%;
+  animation: path 20s ease-in-out infinite;
+}
+
+@keyframes path {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(180px, -80px);
+    rotate: 45deg;
+  }
+  75% {
+    transform: translate(240px, -150px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@media (max-width: 1350px) {
   .reviews__items {
     grid-template-areas: initial;
     grid-template-columns: repeat(1, 1fr);
@@ -951,6 +1001,7 @@ panelsOnBg, .reviews__item {
     transform: none;
     max-width: none;
     grid-area: auto;
+    cursor: auto;
   }
   .reviews__button {
     display: none;
@@ -1194,43 +1245,52 @@ panelsOnBg, .reviews__item {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -10;
-  position: absolute;
-  animation: float 15s ease-out infinite;
+  z-index: -1;
   filter: blur(240px);
 }
 
-.faq__backgrounds--blue {
-  top: 30%;
-  right: 10%;
-  width: 30%;
-  height: auto;
+.faq__backgrounds-circles {
+  height: 22rem;
+  top: -10%;
+  left: 30%;
+  animation: path 20s ease-in-out infinite;
 }
 
-.faq__backgrounds--white {
-  top: 10%;
-  left: 5%;
-  width: 40%;
-  height: auto;
-}
-
-.faq__backgrounds--purple {
+.faq__backgrounds-blue {
+  height: 22rem;
   top: 50%;
-  left: 70%;
-  width: 25%;
-  height: auto;
-  z-index: 1;
+  left: -30%;
+  animation: path 20s ease-in-out infinite;
 }
 
-@keyframes float {
+.faq__backgrounds-white {
+  height: 20rem;
+  top: -10%;
+  left: -30%;
+  animation: path 20s ease-in-out infinite;
+}
+
+.faq__backgrounds-pirple {
+  height: 12rem;
+  z-index: 10;
+  top: 50%;
+  left: -30%;
+  animation: path 20s ease-in-out infinite;
+}
+
+@keyframes path {
   0% {
-    transform: translate(0, 0) scale(1);
+    transform: translate(0, 0);
   }
-  50% {
-    transform: translate(80%, -60%) scale(1.05);
+  25% {
+    transform: translate(180px, -80px);
+    rotate: 45deg;
+  }
+  75% {
+    transform: translate(240px, -150px);
   }
   100% {
-    transform: translate(0, 0) scale(1);
+    transform: translate(0, 0);
   }
 }
 @media (max-width: 1000px) {

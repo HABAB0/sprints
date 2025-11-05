@@ -126,9 +126,28 @@ const burgerMenuIconChange = () => {
   })
 }
 
+const heroSectionScroll = () => {
+  let lastScroll = window.scrollY;
+  const heroSectionImage = document.querySelector('.hero-section__circles')
+  window.addEventListener('scroll', () => {
+  const currentScroll = window.scrollY;
+  if(currentScroll > 150){
+    if (currentScroll > lastScroll) {
+      // Скролл вниз
+      heroSectionImage.style.transform = 'rotate(45deg)'
+    } else if (currentScroll < lastScroll) {
+      heroSectionImage.style.transform = 'rotate(0deg)'
+    }
+    lastScroll = currentScroll;
+  }
+});
+}
+
+
 emojiSwap()
 howWorksSlider()
 reviewsSwapCards()
 faqAccordion()
 languageSwap()
 burgerMenuIconChange()
+heroSectionScroll()

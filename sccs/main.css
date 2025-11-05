@@ -153,7 +153,7 @@ panelsOnBg, .reviews__item {
   gap: 2rem;
   grid-template-columns: repeat(2, 1fr);
   justify-content: space-between;
-  padding: 1rem 2.5rem;
+  padding: 3rem 2.5rem;
 }
 
 .hero-section__text {
@@ -273,6 +273,30 @@ panelsOnBg, .reviews__item {
 }
 .hero-section__scroll:hover .hero-section__scroll-image {
   background: url("../../../images/svg/Wheeldown-hover.svg") no-repeat center;
+}
+
+.hero-section__image {
+  position: relative;
+}
+
+.hero-section__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.hero-section__image img:first-child {
+  z-index: 2;
+  transform: rotate(0deg);
+}
+
+.hero-section__image img:last-child {
+  z-index: 1;
 }
 
 .hero-section__backgrounds {
@@ -1425,6 +1449,29 @@ panelsOnBg, .reviews__item {
   font-size: 10px;
   line-height: 135%;
   font-weight: 400;
+}
+
+.feedback__image {
+  position: relative;
+  overflow: hidden;
+  background: url(/images/main-pictures/feedback/backroud-image-feedback.svg) center no-repeat;
+}
+
+.feedback__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(240px);
+  z-index: 1;
+}
+
+.feedback__main-picture {
+  position: relative;
+  z-index: 2;
+  display: block;
+  height: auto;
 }
 
 @media (max-width: 1000px) {

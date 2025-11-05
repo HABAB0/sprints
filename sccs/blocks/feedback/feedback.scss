@@ -90,6 +90,30 @@
     @include text-style(discription-desk);
 }
 
+.feedback__image {
+  position: relative;
+  overflow: hidden;
+  background: url(/images/main-pictures/feedback/backroud-image-feedback.svg) center no-repeat;
+}
+
+.feedback__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  filter: blur(240px);
+  z-index: 1;
+}
+
+.feedback__main-picture {
+  position: relative;
+  z-index: 2;
+  display: block;
+  height: auto;
+}
+
 @media (max-width: 1000px){
     .feedback{
         grid-template-columns: repeat(1, 1fr);

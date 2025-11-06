@@ -1,0 +1,132 @@
+@use "sass:map";
+// H1
+$h1-desktop-font-size: 56px;
+$h1-desktop-line-height: 125%;
+$h1-desktop-font-weight: 500;
+
+$text-style:(
+    h1-desk: (font-size: 56px, line-height: 125%, font-weight: 500),
+    h1-mob: (font-size: 36px, line-height: 125%, font-weight: 500),
+    h2-desk: (font-size: 36px, line-height: 112%, font-weight: 500),
+    h2-mob: (font-size: 26px, line-height: 125%, font-weight: 500),
+    h3-desk: (font-size: 24px, line-height: 100%, font-weight: 500),
+    h3-mob: (font-size: 18px, line-height: 125%, font-weight: 500),
+    headline-desk: (font-size: 18px, line-height: 135%, font-weight: 500),
+    headline-mob: (font-size: 14px, line-height: 135%, font-weight: 500),
+    body-desk: (font-size: 18px, line-height: 135%, font-weight: 400),
+    body-mob: (font-size: 14px, line-height: 135%, font-weight: 400),
+    span-desk: (font-size: 18px, line-height: 135%, font-weight: 500),
+    span-mob: (font-size: 14px, line-height: 135%, font-weight: 500),
+    discription-desk: (font-size: 10px, line-height: 135%, font-weight: 400),
+    discription-mob: (font-size: 12px, line-height: 135%, font-weight: 400),
+    table-text-desk: (font-size: 16px, line-height: 135%, font-weight: 400),
+    table-text-mob: (font-size: 14px, line-height: 135%, font-weight: 400),
+);
+
+@mixin text-style($name) {
+    $style: map.get($map: $text-style, $key: $name);
+    font-size: map.get($map: $style, $key: font-size);
+    line-height: map.get($map: $style, $key: line-height);
+    font-weight: map.get($map: $style, $key: font-weight);
+}
+
+$h1-mobile-font-size: 36px;
+$h1-mobile-line-height: 125%;
+$h1-mobile-font-weight: 500;
+
+//H2
+$h2-desktop-font-size: 36px;
+$h2-desktop-line-height: 112%;
+$h2-desktop-font-weight: 500;
+
+$h2-mobile-font-size: 26px;
+$h2-mobile-line-height: 125%;
+$h2-mobile-font-weight: 500;
+
+//H3
+$h3-desktop-font-size: 24px;
+$h3-desktop-line-height: 100%;
+$h3-desktop-font-weight: 500;
+
+$h3-mobile-font-size: 18px;
+$h3-mobile-line-height: 125%;
+$h3-mobile-font-weight: 500;
+
+//Headline
+$headline-desktop-font-size: 18px;
+$headline-desktop-line-height:135%;
+$headline-desktop-font-weight: 500;
+
+$headline-mobile-font-size: 14px;
+$headline-mobile-line-height:135%;
+$headline-mobile-font-weight: 500;
+
+//body
+$body-desktop-font-size: 18px;
+$body-desktop-line-height:135%;
+$body-desktop-font-weight: 400;
+
+$body-mobile-font-size: 14px;
+$body-mobile-line-height:135%;
+$body-mobile-font-weight: 400;
+
+//span
+$span-desktop-font-size: 18px;
+$span-desktop-line-height:135%;
+$span-desktop-font-weight: 500;
+
+$span-mobile-font-size: 14px;
+$span-mobile-line-height:135%;
+$span-mobile-font-weight: 500;
+
+//discription
+$discription-desktop-font-size: 10px;
+$discription-desktop-line-height:135%;
+$discription-desktop-font-weight: 400;
+
+$discription-mobile-font-size: 12px;
+$discription-mobile-line-height:135%;
+$discription-mobile-font-weight: 400;
+
+//table-text
+$table-text-desktop-font-size: 16px;
+$table-text-desktop-line-height:135%;
+$table-text-desktop-font-weight: 400;
+
+$table-text-mobile-font-size: 14px;
+$table-text-mobile-line-height:135%;
+$table-text-mobile-font-weight: 400;
+
+//color
+$color-blue:#4754EB;
+$color-purple:#8633B0;
+$color-pink:#EB478B;
+$color-yellow:#FFDF80;
+$color-orange:#F47B25;
+
+//background
+$color-background:#F2F2F2;
+
+//main
+$color-white:#FFFFFF;
+$color-black:#1A1A1A;
+$color-gray:#808080;
+$color-ltGray:#D9D9D9;
+
+//hover
+$color-hover-blue:#505DEC;
+
+//inactive
+$color-inactive-blue:#3C49DD;
+
+
+panelsOnWhite {
+    backdrop-filter: blur(24px);
+    box-shadow: 0 4px 20px 0 rgba(25, 25, 25, 0.05);
+}
+
+panelsOnBg {
+    backdrop-filter: blur(240px);
+    box-shadow: -2px 4px 20px 0 rgba(25, 25, 25, 0.03);
+}
+

@@ -1,0 +1,236 @@
+panelsOnWhite {
+  -webkit-backdrop-filter: blur(24px);
+          backdrop-filter: blur(24px);
+  box-shadow: 0 4px 20px 0 rgba(25, 25, 25, 0.05);
+}
+
+panelsOnBg, .reviews__item {
+  -webkit-backdrop-filter: blur(240px);
+          backdrop-filter: blur(240px);
+  box-shadow: -2px 4px 20px 0 rgba(25, 25, 25, 0.03);
+}
+
+.reviews {
+  position: relative;
+  display: flex;
+  padding: 4rem 2.5rem 2rem 4rem;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+.reviews__title {
+  color: #1A1A1A;
+  font-size: 36px;
+  line-height: 112%;
+  font-weight: 500;
+}
+
+.reviews__items {
+  display: grid;
+  justify-items: end;
+  gap: 3rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.reviews__item {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-radius: 16px;
+  max-width: 630px;
+  padding: 1rem;
+  background: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: transform 0.4s ease-in-out;
+}
+
+.reviews__item-top {
+  grid-area: top;
+  position: relative;
+  z-index: 10;
+  transform: translate(-250px, -425px);
+}
+
+.reviews__item-bottom {
+  grid-area: bottom;
+  position: relative;
+  z-index: 8;
+  transform: translate(-500px, -50px);
+}
+
+.reviews__item-right {
+  grid-area: right;
+  position: relative;
+  z-index: 9;
+  transform: translate(-15px, -200px);
+}
+
+.reviews__item-left {
+  grid-area: left;
+  transform: translate(-600px, -350px);
+}
+
+.reviews__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.5);
+  gap: 1rem;
+}
+
+.reviews__profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #1A1A1A;
+  font-size: 24px;
+  line-height: 100%;
+  font-weight: 500;
+}
+
+.reviews__date {
+  color: #808080;
+  font-size: 18px;
+  line-height: 135%;
+  font-weight: 400;
+}
+
+.reviews__text {
+  color: #808080;
+  font-size: 18px;
+  line-height: 135%;
+  font-weight: 400;
+}
+
+.reviews__button {
+  position: relative;
+  top: 500px;
+  left: 1040px;
+  color: #4754EB;
+  background: #FFFFFF;
+}
+
+.reviews__button:hover {
+  box-shadow: 0 24px 24px 0 rgba(80, 93, 236, 0.25);
+  color: #505DEC;
+}
+
+.reviews__button:active {
+  box-shadow: 0 8px 24px 0 rgba(60, 73, 221, 0.1);
+  color: #3C49DD;
+}
+
+.reviewers__structure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #808080;
+}
+
+.reviewers__structure-text {
+  display: none;
+}
+
+.reviews__backgrounds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  filter: blur(240px);
+}
+
+.reviews__backgrounds-circles {
+  height: 15rem;
+  top: 0%;
+  left: 30%;
+  animation: path 20s ease-in-out infinite;
+}
+
+.reviews__backgrounds-blue {
+  height: 22rem;
+  top: 50%;
+  left: 30%;
+  animation: path 20s ease-in-out infinite;
+}
+
+.reviews__backgrounds-white {
+  height: 15rem;
+  top: 70%;
+  left: -30%;
+  animation: path 20s ease-in-out infinite;
+}
+
+.reviews__backgrounds-pirple {
+  height: 12rem;
+  z-index: 10;
+  top: 45%;
+  left: 30%;
+  animation: path 20s ease-in-out infinite;
+}
+
+@keyframes path {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(180px, -80px);
+    rotate: 45deg;
+  }
+  75% {
+    transform: translate(240px, -150px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@media (max-width: 1350px) {
+  .reviews__items {
+    grid-template-areas: initial;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
+  .reviews__item-top, .reviews__item-bottom, .reviews__item-left, .reviews__item-right {
+    display: block;
+    position: static;
+    transform: none;
+    max-width: none;
+    grid-area: auto;
+    cursor: auto;
+  }
+  .reviews__button {
+    display: none;
+  }
+  .reviews::after {
+    max-width: 768px;
+    background: url("/images/svg/mobile768-bg/background-reviews-mobile.svg") no-repeat center;
+  }
+}
+@media (max-width: 500px) {
+  .reviews__title {
+    font-size: 18px;
+    line-height: 125%;
+    font-weight: 500;
+  }
+  .reviews__profile {
+    font-size: 18px;
+    line-height: 125%;
+    font-weight: 500;
+  }
+  .reviews__date {
+    font-size: 14px;
+    line-height: 135%;
+    font-weight: 400;
+  }
+  .reviews__text {
+    font-size: 14px;
+    line-height: 135%;
+    font-weight: 400;
+  }
+  .reviews::after {
+    max-width: 375px;
+    background: url("/images/svg/mobile375-bg/background-reviews-mobile.svg") no-repeat center;
+  }
+}/*# sourceMappingURL=reviews.css.map */

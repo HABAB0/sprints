@@ -1,0 +1,77 @@
+@use "../variables/_variables" as *;
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    background: $color-blue;
+    border-radius: 0 0 24px 24px;
+    color: $color-white;
+}
+
+.footer__text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    @include text-style(table-text-desk);
+}
+
+.footer__title {
+    @include text-style(body-desk);
+}
+
+.footer__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    @include text-style(body-desk);
+    color: $color-white;
+    text-decoration: none;
+    transition: transform 0.4s ease;
+
+    &-image{
+        height: 25px;
+        width: 20px;
+        background: url("../../../images/svg/arrow.svg") no-repeat center;
+        background-size: cover; 
+    }
+    &:hover {
+        .footer__actions-up {
+            color: $color-ltGray;
+        }
+        .footer__actions-image {
+            height: 30px;
+            width: 20px;
+            background: url("../../../images/svg/arrow-hover.svg") no-repeat center;
+            background-size: cover;
+
+        }
+    }
+}
+
+.footer__actions-adaptive {
+    display: none;
+}
+
+@media (max-width: 500px){
+    .footer__text {
+        @include text-style(table-text-mob);
+    }
+
+    .footer__title {
+        @include text-style(body-mob);
+    }
+
+    .footer__actions {
+        @include text-style(body-mob);
+    }
+
+    .footer__actions-up {
+        display: none;
+    }
+
+    .footer__actions-adaptive {
+        display: block;
+    }
+}

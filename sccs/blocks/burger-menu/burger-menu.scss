@@ -1,0 +1,66 @@
+@use "../variables/_variables" as *;
+
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: fixed;
+    top: 85px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transition: opacity 0.4s ease;
+    background: $color-white;
+    z-index: 11;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.burger-menu--open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.burger-menu__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.burger-menu__menu-link {
+  text-decoration: none;
+  color: $color-black;
+  @include text-style(h1-desk);
+  transition: color 0.4s ease;
+  &:hover {
+    color: $color-hover-blue;
+  }
+}
+
+.burger-menu__lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  cursor: pointer;
+  color: $color-gray;
+  @include text-style(h1-desk);
+  transition: color 0.4s ease;
+}
+
+.burger-menu__lang--ru {
+  
+  &:hover {
+    color: $color-hover-blue;
+  }
+}
+
+.burger-menu__lang--en {
+  
+  &:hover {
+    color: $color-hover-blue;
+  }
+}

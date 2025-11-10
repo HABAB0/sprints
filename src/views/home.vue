@@ -1,19 +1,17 @@
 <script setup>
 import { onMounted } from 'vue'
 import { StoriesStorage } from '@/stores/stories'
+import storyPattern from '@/components/storyPattern.vue'
 
 const store = StoriesStorage()
 
-onMounted(() => {
-  store.fetchStories()
-})
 </script>
 
 <template>
-  <div v-for="story in store.stories" key="story.id" >
-    {{ story.id }}
-    {{ story.title }}
-  </div>
+  <storyPattern />
+  <button @click="store.fetchStoriesData()">Ещё новости</button>
+  <button @click="store.refreshStories()">Новые новости</button>
+  <p>asdasd</p>
 </template>
 
 <style scoped>

@@ -1,15 +1,17 @@
 <script setup>
-  import home from '../views/home.vue'
+import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
   <nav>
     <router-link to="/">Главная</router-link> |
-    <router-link to="/noHome">О нас</router-link>
+    <router-link to="/noHome">Не главная</router-link>
   </nav>
   <main>
     <router-view />
   </main>
 </template>
 
-<style scoped></style>
+<style scoped>
+
+</style>

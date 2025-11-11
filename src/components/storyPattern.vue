@@ -2,25 +2,35 @@
 import { onMounted } from 'vue'
 import { StoriesStorage } from '@/stores/stories'
 
-const store = StoriesStorage()
+const story = StoriesStorage()
 
 onMounted(async () => {
-  if(!store.loaded) {
-    await store.fetchStoriesId()
-    await store.fetchStoriesData()
+  if(!story.loaded) {
+    await story.fetchStoriesId()
+    await story.fetchStoriesData()
   }
 })
 </script>
 
 <template>
-  <div v-for="(story, index) in store.storiesData" :key="story.id">
+  <div v-for="(story, index) in story.storiesData" :key="story.id" >
     <p>{{ index + 1 }}</p>
-    <a :href="story.url" target="_blank">
+    <router-link :to="{name: 'storyDetail', params: { id: story.id } }">
       {{ story.title }}
-    </a>
-    <p>
-      {{ story.by }}
-    </p>
+    </router-link>
+    <div>
+      <p>
+        {{ story.by }}
+      </p>
+      <p>
+        {{ (new Date(story.time * 1000)).toLocaleTimeString('ru-RU', {
+        hour12: false,
+        hour: '2-digit',
+        minute: '2-digit'})
+        }}
+      </p>
+    </div>
+    <p>Коментарии: {{ (story.kids || []).length }}</p>
   </div>
 </template>
 

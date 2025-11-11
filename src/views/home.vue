@@ -8,10 +8,11 @@ const store = StoriesStorage()
 </script>
 
 <template>
-  <storyPattern />
-  <button @click="store.fetchStoriesData()">Ещё новости</button>
+  <div class = "grid grid-cols-2 gap-4">
+    <storyPattern />
+  </div>
+  <button @click="store.fetchStoriesData()">Загрузить ещё</button>
   <button @click="store.refreshStories()">Новые новости</button>
-  <p>asdasd</p>
 </template>
 
 <style scoped>

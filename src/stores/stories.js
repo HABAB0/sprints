@@ -1,43 +1,40 @@
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
-export const StoriesStorage = defineStore('stories', {
-    state: () =>  ({
-        storiesId: [],
-        storiesData: [],
-        storiesCount: 0,
-        loaded: false,
-    }),
+export const StoriesStorage = defineStore('stories', () =>{
+    const storiesId = ref([])
+    const storiesData = ref([])
+    const storiesCount = ref(0)
+    const loaded = ref(false)
+    const newId = ref(null)
 
-    actions: {
-        async fetchStoriesId()  {
-            const storiesId = await fetch('https://hacker-news.firebaseio.com/v0/newstories.json')
+    const  fetchStoriesId = async () => {
+        storiesId.value = await fetch('https://hacker-news.firebaseio.com/v0/newstories.json')
+            .then(res => res.json())
+    }
+
+    const  fetchStoriesData = async () => {
+        const fetchPromises = storiesId.value.slice(storiesCount.value, storiesCount.value + 20).map(id =>
+            fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
                 .then(res => res.json())
-                .then(data => this.storiesId = data)
-        },
+        )
+        const stories = await Promise.all(fetchPromises)
+        storiesData.value.push(...stories)
+        storiesCount.value += 20;
+        loaded.value = true
+    }
 
-        async fetchStoriesData() {
-            const storiesData = this.storiesId.slice(this.storiesCount, this.storiesCount + 20).map(id =>
-                fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
-                    .then(res => res.json())
-            )
-            const stories = await Promise.all(storiesData)
-            this.storiesData.push(...stories)
-            this.storiesCount += 20;
-            this.loaded = true
-        },
-
-        async refreshStories() {
-            const storiesId = await fetch('https://hacker-news.firebaseio.com/v0/newstories.json')
-            const newId = await storiesId.json()
-            if (newId[0] !== this.storiesId[0]) {
-                this.storiesId = newId;
-                this.storiesData = []
-                this.storiesCount = 0
-                await this.fetchStoriesData()
+        const refreshStories = async () => {
+            const res = await fetch('https://hacker-news.firebaseio.com/v0/newstories.json')
+            newId.value = await res.json()
+            if (newId.value[0] !== storiesId.value[0]) {
+                storiesId.value = newId.value;
+                storiesData.value = []
+                storiesCount.value = 0
+                await fetchStoriesData()
             }
         }
-    },
+    return {storiesId, storiesData, storiesCount, loaded, newId, fetchStoriesId, fetchStoriesData, refreshStories}
 })
 
 

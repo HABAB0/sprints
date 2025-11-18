@@ -1,13 +1,18 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
+export interface Priority {
+    name: string;
+    color: string;
+}
+
 export interface TaskData {
     title: string
     description: string
     date: string
     deadline: string
     size: string
-    priority: string
+    priority:  Priority,
     role: string
 }
 
@@ -18,7 +23,7 @@ export interface Task {
     date: string
     deadline: string
     size: string
-    priority: string
+    priority:  Priority,
     role: string
 }
 
@@ -48,5 +53,9 @@ export const useTaskStore = defineStore('task', () => {
         newId.value += 1
     }
 
-  return {isCreateTask, openCreateTask, closeCreateTask, createTask, scheduledTasks}
+    const removeTask = (id: number) => {
+        scheduledTasks.value = scheduledTasks.value.filter(task => task.id !== id);
+    }
+
+  return {isCreateTask, openCreateTask, closeCreateTask, createTask, scheduledTasks, removeTask}
 })

@@ -1,27 +1,25 @@
 <script setup lang="ts">
 import {onMounted, reactive} from "vue";
 import {useTaskStore} from "@/stores/TaskStore.ts";
-import { priorities, roles, size } from '@/stores/TaskStore.ts'
+import { priorities, roles, sizes } from '@/stores/TaskStore.ts'
+import { computed } from 'vue';
 
 
 const TaskStore = useTaskStore();
 
-const taskData = reactive({
-  title: '',
-  date: '',
-  description: '',
-  deadline: '',
-  size: '',
-  priority:  '',
-  role: '',
-})
-
-onMounted(() => {
+const taskData = computed(() => {
   const task = TaskStore.updateTask()
-  if (!task) {
-    return;
+  if (!task) return {
+    title: '',
+    date: '',
+    description: '',
+    deadline: '',
+    size: sizes[1].name,
+    priority: priorities[1].name,
+    role: roles[0].name,
   }
-  Object.assign(taskData, {
+
+  return {
     title: task.title,
     date: task.date,
     description: task.description,
@@ -29,7 +27,7 @@ onMounted(() => {
     size: task.size.name,
     priority: task.priority.name,
     role: task.role.name,
-  })
+  }
 })
 
 
@@ -66,7 +64,7 @@ onMounted(() => {
             <label >Размер задачи</label>
             <select v-model="taskData.size" required >
               <option
-                  v-for="size in size"
+                  v-for="size in sizes"
                   :value="size.name">
                 {{ size.name }}
               </option>

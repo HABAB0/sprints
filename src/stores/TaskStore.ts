@@ -16,7 +16,7 @@ export const roles: Roles[] = [
     { name: "дизайнер", icon: "🎨" },
 ];
 
-export const size: Sizes[] = [
+export const sizes: Sizes[] = [
     { name: "маленький", size: "8" },
     { name: "средний", size: "15" },
     { name: "большой", size: "25" }
@@ -32,6 +32,10 @@ export const useTaskStore = defineStore('task', () => {
     }
 
     const scheduledTasks = ref<Task[]>([])
+    const workTasks = ref<Task[]>([])
+    const testingTasks = ref<Task[]>([])
+    const completedTasks = ref<Task[]>([])
+
 
     const isCreateTask = ref<boolean>(false)
 
@@ -56,7 +60,14 @@ export const useTaskStore = defineStore('task', () => {
     }
 
     const removeTask = (id: number) => {
-        scheduledTasks.value = scheduledTasks.value.filter(task => task.id !== id);
+        const lists = [scheduledTasks, workTasks, testingTasks, completedTasks];
+        for (const list of lists) {
+            const index = list.value.findIndex(task => task.id === id);
+            if (index !== -1) {
+                list.value.splice(index, 1);
+                break;
+            }
+        }
     }
 
     const isUpdateTask = ref<boolean>(false)
@@ -73,26 +84,80 @@ export const useTaskStore = defineStore('task', () => {
     }
 
     const updateTask = () => {
-        closeCreateTask()
-        return scheduledTasks.value.find(task => task.id === updateTaskId.value)
+        const lists = [scheduledTasks, workTasks, testingTasks, completedTasks];
+        for (const list of lists) {
+            const task = list.value.find(t => t.id === updateTaskId.value);
+            if (task) return task;
+        }
+        return null;
     }
 
     const saveUpdateTask = (taskData: TaskData) => {
-        const task = scheduledTasks.value.find(task => task.id === updateTaskId.value)
-
-        if (!task) {
-            return
+        const lists = [scheduledTasks, workTasks, testingTasks, completedTasks];
+        for (const list of lists) {
+            const task = list.value.find(t => t.id === updateTaskId.value);
+            if (task) {
+                // Обновляем поля
+                task.title = taskData.title;
+                task.description = taskData.description;
+                task.date = taskData.date;
+                task.deadline = taskData.deadline;
+                task.size = sizes.find(s => s.name === taskData.size) || sizes[1];
+                task.priority = priorities.find(p => p.name === taskData.priority) || priorities[1];
+                task.role = roles.find(r => r.name === taskData.role) || roles[1];
+                task.updatedAt = new Date().toISOString();
+                closeUpdateTask();
+                return;
+            }
         }
-        task.title = taskData.title
-        task.description = taskData.description
-        task.date = taskData.date
-        task.deadline = taskData.deadline
-        task.size = size.find(size => size.name === taskData.size) || size[1]
-        task.priority = priorities.find(priority => priority.name === taskData.priority) || priorities[1]
-        task.role = roles.find(role => role.name === taskData.role) || roles[1]
 
         closeUpdateTask()
     }
 
-  return {isCreateTask, openCreateTask, closeCreateTask, createTask, scheduledTasks, removeTask, phoneStatus, phoneSwitch, updateTask, isUpdateTask, openUpdateTask, closeUpdateTask, saveUpdateTask}
+    const dragItem = ref<Task | null>(null)
+    const dragList = ref<'scheduled' | 'work' | 'testing' | 'completed' | ''>('')
+
+    const setDragItem = (task: Task, list: typeof dragList.value) => {
+        dragItem.value = task
+        dragList.value = list
+    }
+
+    const moveTaskByDrag = (targetStage: 'scheduled' | 'work' | 'testing' | 'completed') => {
+        if (!dragItem.value || !dragList.value) return
+
+        const lists = {
+            scheduled: scheduledTasks,
+            work: workTasks,
+            testing: testingTasks,
+            completed: completedTasks,
+        }
+
+        const fromStage = dragList.value
+        const toStage = targetStage
+
+        const allowedDrag = (
+            (fromStage === 'scheduled' && toStage === 'work') ||
+            (fromStage === 'work' && toStage === 'testing') ||
+            (fromStage === 'testing' && toStage === 'completed') ||
+            (fromStage === 'testing' && toStage === 'work')
+        )
+
+        if (allowedDrag) {
+            const fromList = lists[fromStage]
+            const toList = lists[toStage]
+
+            const index = fromList.value.findIndex(t => t.id === dragItem.value!.id)
+            if (index !== -1) {
+                const [task] = fromList.value.splice(index, 1)
+                toList.value.push(task)
+            }
+        }
+
+        dragItem.value = null
+        dragList.value = ''
+    }
+
+
+
+  return {isCreateTask, openCreateTask, closeCreateTask, createTask, scheduledTasks, removeTask, phoneStatus, phoneSwitch, updateTask, isUpdateTask, openUpdateTask, closeUpdateTask, saveUpdateTask, workTasks, testingTasks, completedTasks, dragItem, setDragItem, moveTaskByDrag}
 })

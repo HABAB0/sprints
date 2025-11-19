@@ -20,7 +20,7 @@ const TaskStore = useTaskStore();
       <div class="phone__content">
         <div v-if="TaskStore.phoneStatus" class="phone__body">
           <div class="phone__wrapper">
-            <div class="phone__columns">
+            <div class="phone__columns" @dragover.prevent @drop.prevent="() => TaskStore.moveTaskByDrag('scheduled')">
               <scheduled-tasks/>
             </div>
             <div>
@@ -28,7 +28,7 @@ const TaskStore = useTaskStore();
             </div>
           </div>
           <div class="phone__wrapper">
-            <div class="phone__columns">
+            <div class="phone__columns" @dragover.prevent @drop.prevent="() => TaskStore.moveTaskByDrag('work')">
               <work-tasks/>
             </div>
             <div>
@@ -36,7 +36,7 @@ const TaskStore = useTaskStore();
             </div>
           </div>
           <div class="phone__wrapper">
-            <div class="phone__columns">
+            <div class="phone__columns" @dragover.prevent @drop.prevent="() => TaskStore.moveTaskByDrag('testing')">
               <testing-tasks/>
             </div>
             <div>
@@ -44,7 +44,7 @@ const TaskStore = useTaskStore();
             </div>
           </div>
           <div class="phone__wrapper">
-            <div class="phone__columns">
+            <div class="phone__columns" @dragover.prevent @drop.prevent="() => TaskStore.moveTaskByDrag('completed')">
               <completed-tasks/>
             </div>
             <div>
@@ -64,8 +64,6 @@ const TaskStore = useTaskStore();
   <div v-if="TaskStore.isUpdateTask">
     <updating-task />
   </div>
-
-
 </template>
 
 <style scoped>

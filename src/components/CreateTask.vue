@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {reactive} from "vue";
 import {useTaskStore} from "@/stores/TaskStore.ts";
-import { priorities, roles, size } from '@/stores/TaskStore.ts'
+import { priorities, roles, sizes } from '@/stores/TaskStore.ts'
 
 const TaskStore = useTaskStore();
 
@@ -53,7 +53,7 @@ const createTask = () => {
           <label >Размер задачи</label>
           <select v-model="taskData.size" required >
             <option
-               v-for="size in size"
+               v-for="size in sizes"
                :value="size">
               {{ size.name }}
             </option>

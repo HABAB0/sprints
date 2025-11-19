@@ -33,4 +33,6 @@ export interface Task {
     size: Sizes
     priority:  Priority,
     role: Roles
+    updatedAt?: string;
+    returnReason?: string;
 }

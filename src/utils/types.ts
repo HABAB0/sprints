@@ -35,4 +35,5 @@ export interface Task {
     role: Roles
     updatedAt?: string;
     returnReason?: string;
+    isMade?: boolean;
 }

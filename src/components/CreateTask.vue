@@ -114,6 +114,6 @@ const createTask = () => {
 .create-button{
   border: 1px solid silver;
   border-radius: 5px;
-  ursor: pointer;
+  cursor: pointer;
 }
 </style>

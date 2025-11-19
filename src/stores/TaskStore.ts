@@ -95,9 +95,8 @@ export const useTaskStore = defineStore('task', () => {
     const saveUpdateTask = (taskData: TaskData) => {
         const lists = [scheduledTasks, workTasks, testingTasks, completedTasks];
         for (const list of lists) {
-            const task = list.value.find(t => t.id === updateTaskId.value);
+            const task = list.value.find(task => task.id === updateTaskId.value);
             if (task) {
-                // Обновляем поля
                 task.title = taskData.title;
                 task.description = taskData.description;
                 task.date = taskData.date;
@@ -149,15 +148,19 @@ export const useTaskStore = defineStore('task', () => {
             const index = fromList.value.findIndex(t => t.id === dragItem.value!.id)
             if (index !== -1) {
                 const [task] = fromList.value.splice(index, 1)
+
+                if (toStage === 'completed') {
+                    task.isMade = new Date(task.deadline) < new Date();
+                }
                 toList.value.push(task)
             }
         }
-
         dragItem.value = null
         dragList.value = ''
     }
 
 
 
-  return {isCreateTask, openCreateTask, closeCreateTask, createTask, scheduledTasks, removeTask, phoneStatus, phoneSwitch, updateTask, isUpdateTask, openUpdateTask, closeUpdateTask, saveUpdateTask, workTasks, testingTasks, completedTasks, dragItem, setDragItem, moveTaskByDrag}
+  return {isCreateTask, openCreateTask, closeCreateTask, createTask, scheduledTasks, removeTask, phoneStatus, phoneSwitch, updateTask,
+      isUpdateTask, openUpdateTask, closeUpdateTask, saveUpdateTask, workTasks, testingTasks, completedTasks, dragItem, setDragItem, moveTaskByDrag}
 })

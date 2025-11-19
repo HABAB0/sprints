@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useTaskStore } from '@/stores/TaskStore.ts';
 import type { Task } from '@/utils/types.ts';
-
 const TaskStore = useTaskStore();
 const props = defineProps<{ task: Task }>();
 </script>
@@ -16,15 +15,15 @@ const props = defineProps<{ task: Task }>();
       <div>
         {{task.title}}
       </div>
-      <div class="flex gap-1 items-center justify-center cursor-pointer">
+      <div class="task__content flex gap-1 items-center justify-center cursor-pointer">
         <div @click="TaskStore.openUpdateTask(task.id)">✏️</div>
         <div @click="TaskStore.removeTask(task.id)" class=" p-0.5 cursor-pointer items-center justify-center">✖</div>
       </div>
-
     </div>
+    <div v-if="task.isMade !== undefined" class="flex h-2"  :class="task.isMade ? 'bg-red-800' : 'bg-green-800'"></div>
     <div class="pl-2">{</div>
     <div class="flex flex-col  gap-1 pl-4">
-      <div class="flex gap-1">
+      <div class="task__content flex gap-1">
         <p>date:</p>
         {{
           (() => {
@@ -33,7 +32,7 @@ const props = defineProps<{ task: Task }>();
           })()
         }}
       </div>
-      <div class="flex gap-1" v-if="task.updatedAt">
+      <div class="task__content flex gap-1" v-if="task.updatedAt">
         <p>updated:</p> {{
           (() => {
             const d = new Date(task.updatedAt);
@@ -41,7 +40,7 @@ const props = defineProps<{ task: Task }>();
           })()
         }}
       </div>
-      <div class="flex gap-1">
+      <div class="task__content flex gap-1">
         <p>deadline:</p>{{
           (() => {
             const d = new Date(task.deadline);
@@ -49,7 +48,7 @@ const props = defineProps<{ task: Task }>();
           })()
         }}
       </div>
-      <div class="flex gap-1">
+      <div class="task__content flex gap-1">
         <p>description:</p>{{task.description}}
       </div>
     </div>
@@ -71,5 +70,10 @@ const props = defineProps<{ task: Task }>();
   border: 1px solid silver;
   border-radius: 15px 15px 0 0;
   padding: 5px;
+}
+
+.task__content {
+  max-width: 250px;
+  overflow-y: auto;
 }
 </style>
